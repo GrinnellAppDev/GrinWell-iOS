@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E6E26FE0B8C485288D0C7AD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2A73E19A0441D58BB6ADF5 /* libPods.a */; };
+		67B0C49319C294C600657D09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C49219C294C600657D09 /* Foundation.framework */; };
+		67B0C49519C294C600657D09 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C49419C294C600657D09 /* CoreGraphics.framework */; };
+		67B0C49719C294C600657D09 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C49619C294C600657D09 /* UIKit.framework */; };
+		67B0C49D19C294C600657D09 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 67B0C49B19C294C600657D09 /* InfoPlist.strings */; };
+		67B0C49F19C294C600657D09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C49E19C294C600657D09 /* main.m */; };
+		67B0C4A319C294C600657D09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C4A219C294C600657D09 /* AppDelegate.m */; };
+		67B0C4A619C294C600657D09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67B0C4A419C294C600657D09 /* Main.storyboard */; };
+		67B0C4AB19C294C600657D09 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67B0C4AA19C294C600657D09 /* Images.xcassets */; };
+		67B0C4B219C294C700657D09 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C4B119C294C700657D09 /* XCTest.framework */; };
+		67B0C4B319C294C700657D09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C49219C294C600657D09 /* Foundation.framework */; };
+		67B0C4B419C294C700657D09 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C49619C294C600657D09 /* UIKit.framework */; };
+		67B0C4BC19C294C700657D09 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 67B0C4BA19C294C700657D09 /* InfoPlist.strings */; };
+		67B0C4BE19C294C700657D09 /* GrinFitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C4BD19C294C700657D09 /* GrinFitTests.m */; };
+		67B0C4C819C2967900657D09 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C4C719C2967900657D09 /* AudioToolbox.framework */; };
+		67B0C4CA19C2967E00657D09 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C4C919C2967E00657D09 /* CFNetwork.framework */; };
+		67B0C4CC19C2968400657D09 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C4CB19C2968400657D09 /* CoreLocation.framework */; };
+		67B0C4CE19C2968B00657D09 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C4CD19C2968B00657D09 /* libz.dylib */; };
+		67B0C4D019C2969000657D09 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C4CF19C2969000657D09 /* MobileCoreServices.framework */; };
+		67B0C4D219C2969600657D09 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C4D119C2969600657D09 /* QuartzCore.framework */; };
+		67B0C4D419C2969B00657D09 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C4D319C2969B00657D09 /* Security.framework */; };
+		67B0C4D619C2969F00657D09 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C4D519C2969F00657D09 /* StoreKit.framework */; };
+		67B0C4D819C296A600657D09 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C4D719C296A600657D09 /* SystemConfiguration.framework */; };
+		67B0C4DC19C297E100657D09 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C4DB19C297E100657D09 /* SignUpViewController.m */; };
+		67B0C4DF19C2980100657D09 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C4DE19C2980100657D09 /* InitialViewController.m */; };
+		67B0C52319C29D6F00657D09 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C52219C29D6F00657D09 /* MainViewController.m */; };
+		67B0C52619C29E2600657D09 /* ExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C52519C29E2600657D09 /* ExerciseViewController.m */; };
+		67B0C52919C29E3200657D09 /* SleepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C52819C29E3200657D09 /* SleepViewController.m */; };
+		67B0C52C19C29E3D00657D09 /* DietViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C52B19C29E3D00657D09 /* DietViewController.m */; };
+		67B0C52F19C2A05200657D09 /* WalkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C52E19C2A05200657D09 /* WalkingViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		67B0C4B519C294C700657D09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67B0C48719C294C600657D09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67B0C48E19C294C600657D09;
+			remoteInfo = GrinFit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5D2A73E19A0441D58BB6ADF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		67B0C48F19C294C600657D09 /* GrinFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrinFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		67B0C49219C294C600657D09 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		67B0C49419C294C600657D09 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		67B0C49619C294C600657D09 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		67B0C49A19C294C600657D09 /* GrinFit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GrinFit-Info.plist"; sourceTree = "<group>"; };
+		67B0C49C19C294C600657D09 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		67B0C49E19C294C600657D09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		67B0C4A019C294C600657D09 /* GrinFit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GrinFit-Prefix.pch"; sourceTree = "<group>"; };
+		67B0C4A119C294C600657D09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		67B0C4A219C294C600657D09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		67B0C4A519C294C600657D09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		67B0C4AA19C294C600657D09 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		67B0C4B019C294C700657D09 /* GrinFitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrinFitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67B0C4B119C294C700657D09 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		67B0C4B919C294C700657D09 /* GrinFitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GrinFitTests-Info.plist"; sourceTree = "<group>"; };
+		67B0C4BB19C294C700657D09 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		67B0C4BD19C294C700657D09 /* GrinFitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrinFitTests.m; sourceTree = "<group>"; };
+		67B0C4C719C2967900657D09 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		67B0C4C919C2967E00657D09 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		67B0C4CB19C2968400657D09 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		67B0C4CD19C2968B00657D09 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		67B0C4CF19C2969000657D09 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		67B0C4D119C2969600657D09 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		67B0C4D319C2969B00657D09 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		67B0C4D519C2969F00657D09 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		67B0C4D719C296A600657D09 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		67B0C4DA19C297E100657D09 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		67B0C4DB19C297E100657D09 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		67B0C4DD19C2980100657D09 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		67B0C4DE19C2980100657D09 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
+		67B0C52119C29D6F00657D09 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		67B0C52219C29D6F00657D09 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		67B0C52419C29E2600657D09 /* ExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseViewController.h; sourceTree = "<group>"; };
+		67B0C52519C29E2600657D09 /* ExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseViewController.m; sourceTree = "<group>"; };
+		67B0C52719C29E3200657D09 /* SleepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepViewController.h; sourceTree = "<group>"; };
+		67B0C52819C29E3200657D09 /* SleepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepViewController.m; sourceTree = "<group>"; };
+		67B0C52A19C29E3D00657D09 /* DietViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DietViewController.h; sourceTree = "<group>"; };
+		67B0C52B19C29E3D00657D09 /* DietViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DietViewController.m; sourceTree = "<group>"; };
+		67B0C52D19C2A05200657D09 /* WalkingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkingViewController.h; sourceTree = "<group>"; };
+		67B0C52E19C2A05200657D09 /* WalkingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkingViewController.m; sourceTree = "<group>"; };
+		CC73ECB1F30C41FCA1B517DC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		67B0C48C19C294C600657D09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67B0C4D819C296A600657D09 /* SystemConfiguration.framework in Frameworks */,
+				67B0C4D619C2969F00657D09 /* StoreKit.framework in Frameworks */,
+				67B0C4D419C2969B00657D09 /* Security.framework in Frameworks */,
+				67B0C4D219C2969600657D09 /* QuartzCore.framework in Frameworks */,
+				67B0C4D019C2969000657D09 /* MobileCoreServices.framework in Frameworks */,
+				67B0C4CE19C2968B00657D09 /* libz.dylib in Frameworks */,
+				67B0C4CC19C2968400657D09 /* CoreLocation.framework in Frameworks */,
+				67B0C4CA19C2967E00657D09 /* CFNetwork.framework in Frameworks */,
+				67B0C4C819C2967900657D09 /* AudioToolbox.framework in Frameworks */,
+				67B0C49519C294C600657D09 /* CoreGraphics.framework in Frameworks */,
+				67B0C49719C294C600657D09 /* UIKit.framework in Frameworks */,
+				67B0C49319C294C600657D09 /* Foundation.framework in Frameworks */,
+				3E6E26FE0B8C485288D0C7AD /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67B0C4AD19C294C700657D09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67B0C4B219C294C700657D09 /* XCTest.framework in Frameworks */,
+				67B0C4B419C294C700657D09 /* UIKit.framework in Frameworks */,
+				67B0C4B319C294C700657D09 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		67B0C48619C294C600657D09 = {
+			isa = PBXGroup;
+			children = (
+				67B0C49819C294C600657D09 /* GrinFit */,
+				67B0C4B719C294C700657D09 /* GrinFitTests */,
+				67B0C49119C294C600657D09 /* Frameworks */,
+				67B0C49019C294C600657D09 /* Products */,
+				CC73ECB1F30C41FCA1B517DC /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		67B0C49019C294C600657D09 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67B0C48F19C294C600657D09 /* GrinFit.app */,
+				67B0C4B019C294C700657D09 /* GrinFitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		67B0C49119C294C600657D09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67B0C4D719C296A600657D09 /* SystemConfiguration.framework */,
+				67B0C4D519C2969F00657D09 /* StoreKit.framework */,
+				67B0C4D319C2969B00657D09 /* Security.framework */,
+				67B0C4D119C2969600657D09 /* QuartzCore.framework */,
+				67B0C4CF19C2969000657D09 /* MobileCoreServices.framework */,
+				67B0C4CD19C2968B00657D09 /* libz.dylib */,
+				67B0C4CB19C2968400657D09 /* CoreLocation.framework */,
+				67B0C4C919C2967E00657D09 /* CFNetwork.framework */,
+				67B0C4C719C2967900657D09 /* AudioToolbox.framework */,
+				67B0C49219C294C600657D09 /* Foundation.framework */,
+				67B0C49419C294C600657D09 /* CoreGraphics.framework */,
+				67B0C49619C294C600657D09 /* UIKit.framework */,
+				67B0C4B119C294C700657D09 /* XCTest.framework */,
+				5D2A73E19A0441D58BB6ADF5 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		67B0C49819C294C600657D09 /* GrinFit */ = {
+			isa = PBXGroup;
+			children = (
+				67B0C52D19C2A05200657D09 /* WalkingViewController.h */,
+				67B0C52E19C2A05200657D09 /* WalkingViewController.m */,
+				67B0C52419C29E2600657D09 /* ExerciseViewController.h */,
+				67B0C52519C29E2600657D09 /* ExerciseViewController.m */,
+				67B0C52719C29E3200657D09 /* SleepViewController.h */,
+				67B0C52819C29E3200657D09 /* SleepViewController.m */,
+				67B0C52A19C29E3D00657D09 /* DietViewController.h */,
+				67B0C52B19C29E3D00657D09 /* DietViewController.m */,
+				67B0C52119C29D6F00657D09 /* MainViewController.h */,
+				67B0C52219C29D6F00657D09 /* MainViewController.m */,
+				67B0C4DD19C2980100657D09 /* InitialViewController.h */,
+				67B0C4DE19C2980100657D09 /* InitialViewController.m */,
+				67B0C4DA19C297E100657D09 /* SignUpViewController.h */,
+				67B0C4DB19C297E100657D09 /* SignUpViewController.m */,
+				67B0C4A119C294C600657D09 /* AppDelegate.h */,
+				67B0C4A219C294C600657D09 /* AppDelegate.m */,
+				67B0C4A419C294C600657D09 /* Main.storyboard */,
+				67B0C4AA19C294C600657D09 /* Images.xcassets */,
+				67B0C49919C294C600657D09 /* Supporting Files */,
+			);
+			path = GrinFit;
+			sourceTree = "<group>";
+		};
+		67B0C49919C294C600657D09 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				67B0C49A19C294C600657D09 /* GrinFit-Info.plist */,
+				67B0C49B19C294C600657D09 /* InfoPlist.strings */,
+				67B0C49E19C294C600657D09 /* main.m */,
+				67B0C4A019C294C600657D09 /* GrinFit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		67B0C4B719C294C700657D09 /* GrinFitTests */ = {
+			isa = PBXGroup;
+			children = (
+				67B0C4BD19C294C700657D09 /* GrinFitTests.m */,
+				67B0C4B819C294C700657D09 /* Supporting Files */,
+			);
+			path = GrinFitTests;
+			sourceTree = "<group>";
+		};
+		67B0C4B819C294C700657D09 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				67B0C4B919C294C700657D09 /* GrinFitTests-Info.plist */,
+				67B0C4BA19C294C700657D09 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		67B0C48E19C294C600657D09 /* GrinFit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67B0C4C119C294C700657D09 /* Build configuration list for PBXNativeTarget "GrinFit" */;
+			buildPhases = (
+				97AFCCF2FF4A440B8A73CAAC /* Check Pods Manifest.lock */,
+				67B0C48B19C294C600657D09 /* Sources */,
+				67B0C48C19C294C600657D09 /* Frameworks */,
+				67B0C48D19C294C600657D09 /* Resources */,
+				A1F76BCE062744E9AE04020E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GrinFit;
+			productName = GrinFit;
+			productReference = 67B0C48F19C294C600657D09 /* GrinFit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		67B0C4AF19C294C700657D09 /* GrinFitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67B0C4C419C294C700657D09 /* Build configuration list for PBXNativeTarget "GrinFitTests" */;
+			buildPhases = (
+				67B0C4AC19C294C700657D09 /* Sources */,
+				67B0C4AD19C294C700657D09 /* Frameworks */,
+				67B0C4AE19C294C700657D09 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67B0C4B619C294C700657D09 /* PBXTargetDependency */,
+			);
+			name = GrinFitTests;
+			productName = GrinFitTests;
+			productReference = 67B0C4B019C294C700657D09 /* GrinFitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		67B0C48719C294C600657D09 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Grinnell AppDev";
+				TargetAttributes = {
+					67B0C4AF19C294C700657D09 = {
+						TestTargetID = 67B0C48E19C294C600657D09;
+					};
+				};
+			};
+			buildConfigurationList = 67B0C48A19C294C600657D09 /* Build configuration list for PBXProject "GrinFit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 67B0C48619C294C600657D09;
+			productRefGroup = 67B0C49019C294C600657D09 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				67B0C48E19C294C600657D09 /* GrinFit */,
+				67B0C4AF19C294C700657D09 /* GrinFitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		67B0C48D19C294C600657D09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67B0C4AB19C294C600657D09 /* Images.xcassets in Resources */,
+				67B0C49D19C294C600657D09 /* InfoPlist.strings in Resources */,
+				67B0C4A619C294C600657D09 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67B0C4AE19C294C700657D09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67B0C4BC19C294C700657D09 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		97AFCCF2FF4A440B8A73CAAC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A1F76BCE062744E9AE04020E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		67B0C48B19C294C600657D09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67B0C52619C29E2600657D09 /* ExerciseViewController.m in Sources */,
+				67B0C4A319C294C600657D09 /* AppDelegate.m in Sources */,
+				67B0C4DC19C297E100657D09 /* SignUpViewController.m in Sources */,
+				67B0C49F19C294C600657D09 /* main.m in Sources */,
+				67B0C52C19C29E3D00657D09 /* DietViewController.m in Sources */,
+				67B0C52F19C2A05200657D09 /* WalkingViewController.m in Sources */,
+				67B0C52319C29D6F00657D09 /* MainViewController.m in Sources */,
+				67B0C52919C29E3200657D09 /* SleepViewController.m in Sources */,
+				67B0C4DF19C2980100657D09 /* InitialViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67B0C4AC19C294C700657D09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67B0C4BE19C294C700657D09 /* GrinFitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67B0C4B619C294C700657D09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67B0C48E19C294C600657D09 /* GrinFit */;
+			targetProxy = 67B0C4B519C294C700657D09 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		67B0C49B19C294C600657D09 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67B0C49C19C294C600657D09 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		67B0C4A419C294C600657D09 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67B0C4A519C294C600657D09 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		67B0C4BA19C294C700657D09 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67B0C4BB19C294C700657D09 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		67B0C4BF19C294C700657D09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		67B0C4C019C294C700657D09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		67B0C4C219C294C700657D09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC73ECB1F30C41FCA1B517DC /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GrinFit/GrinFit-Prefix.pch";
+				INFOPLIST_FILE = "GrinFit/GrinFit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		67B0C4C319C294C700657D09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC73ECB1F30C41FCA1B517DC /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GrinFit/GrinFit-Prefix.pch";
+				INFOPLIST_FILE = "GrinFit/GrinFit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		67B0C4C519C294C700657D09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GrinFit.app/GrinFit";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GrinFit/GrinFit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GrinFitTests/GrinFitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		67B0C4C619C294C700657D09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GrinFit.app/GrinFit";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GrinFit/GrinFit-Prefix.pch";
+				INFOPLIST_FILE = "GrinFitTests/GrinFitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		67B0C48A19C294C600657D09 /* Build configuration list for PBXProject "GrinFit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67B0C4BF19C294C700657D09 /* Debug */,
+				67B0C4C019C294C700657D09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67B0C4C119C294C700657D09 /* Build configuration list for PBXNativeTarget "GrinFit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67B0C4C219C294C700657D09 /* Debug */,
+				67B0C4C319C294C700657D09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67B0C4C419C294C700657D09 /* Build configuration list for PBXNativeTarget "GrinFitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67B0C4C519C294C700657D09 /* Debug */,
+				67B0C4C619C294C700657D09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 67B0C48719C294C600657D09 /* Project object */;
+}
