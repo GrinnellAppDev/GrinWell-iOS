@@ -7,6 +7,7 @@
 //
 
 #import "DietViewController.h"
+#import <Parse/Parse.h>
 
 @interface DietViewController ()
 
@@ -15,6 +16,7 @@
 @implementation DietViewController {
     int veggies;
     int fruit;
+    NSUserDefaults *userDefaults;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -31,8 +33,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    veggies = 0;
-    fruit = 0;
+    userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    if (true) { // today's date
+        [userDefaults setInteger:0 forKey:@"veggiesToday"];
+        [userDefaults setInteger:0 forKey:@"fruitToday"];
+    }
+    else {
+        
+    }
+    
+    veggies = [userDefaults integerForKey:@"veggiesToday"];
+    fruit = [userDefaults integerForKey:@"fruitToday"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,14 +64,40 @@
 }
 */
 
+- (void) viewDidDisappear:(BOOL)animated {
+    [userDefaults setInteger:veggies forKey:@"veggiesToday"];
+    [userDefaults setInteger:fruit forKey:@"fruitToday"];
+}
+
 - (IBAction)plusFruit:(id)sender {
     fruit++;
     self.fruitLabel.text = [NSString stringWithFormat:@"Fruit: %i", fruit];
+    
+    if (fruit + veggies < 5) {
+        self.amountSucceeded.textColor = [UIColor redColor];
+    }
+    else {
+        self.amountSucceeded.textColor = [UIColor greenColor];
+    }
+    self.amountSucceeded.text = [NSString stringWithFormat:@"%i/5", fruit + veggies];
 }
 
 - (IBAction)plusVeggie:(id)sender {
     veggies++;
     self.veggieLabel.text = [NSString stringWithFormat:@"Vegetable: %i", veggies];
+    
+    if (fruit + veggies < 5) {
+        self.amountSucceeded.textColor = [UIColor redColor];
+    }
+    else {
+        self.amountSucceeded.textColor = [UIColor greenColor];
+    }
+    self.amountSucceeded.text = [NSString stringWithFormat:@"%i/5", fruit + veggies];
+}
+
+- (IBAction)back:(id)sender {
+    
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 @end

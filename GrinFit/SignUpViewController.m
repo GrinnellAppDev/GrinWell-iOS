@@ -64,6 +64,10 @@
         newUser.password = password;
         newUser.email = email;
         
+        PFACL *publicACL = [PFACL ACL];
+        [publicACL setPublicReadAccess:YES];
+        newUser.ACL = publicACL;
+        
         // IF WE NEED OTHER THINGS FOR THE OBJECT LIKE AGE/GENDER OR W/E
         // newUser[@"name"] = name;
         

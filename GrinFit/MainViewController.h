@@ -10,4 +10,11 @@
 
 @interface MainViewController : UIViewController
 
+// OUTLETS
+@property (weak, nonatomic) IBOutlet UILabel *currentDate;
+@property (weak, nonatomic) IBOutlet UILabel *moveRK;
+@property (weak, nonatomic) IBOutlet UILabel *eatRK;
+@property (weak, nonatomic) IBOutlet UILabel *sleepRK;
+@property (weak, nonatomic) IBOutlet UILabel *restoreRK;
+
 @end

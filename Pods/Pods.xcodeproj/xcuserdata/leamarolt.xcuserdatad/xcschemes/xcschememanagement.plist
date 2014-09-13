@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MGConferenceDatePicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>455AA3EFD2DB4E80B38EABD5</key>
+		<key>139A0E3EDF5F40FF8813E464</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4B1ED2DBFED64F87AC30FBDF</key>
+		<key>1A742F42F58C4FA99933314A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>837A75F767824D1FBDDD703B</key>
+		<key>8FE78F9693E043ED82D60A62</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>98AF2A51CC604FE28B2614F9</key>
+		<key>964B4B57E6E64065B0CD2C1E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D4ACA381CCB742BA9F098B50</key>
 		<dict>
 			<key>primary</key>
 			<true/>

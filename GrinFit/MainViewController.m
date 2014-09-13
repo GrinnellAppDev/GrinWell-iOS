@@ -7,12 +7,16 @@
 //
 
 #import "MainViewController.h"
+#import <Parse/Parse.h>
 
 @interface MainViewController ()
 
 @end
 
-@implementation MainViewController
+@implementation MainViewController {
+    PFUser *currentUser;
+    NSDate *today;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +31,36 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    currentUser = [PFUser currentUser];
+    
+    today = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MMM dd"];
+    NSString *todayString = [dateFormatter stringFromDate:today];
+    
+    NSDate *parseDate;
+    PFQuery *dateQuery = [PFUser query];
+    [dateQuery whereKey:@"createdBy" equalTo:[currentUser objectId]];
+    [dateQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // success
+            
+        }
+        else {
+            // we failed
+        }
+    }];
+    
+    self.currentDate.text = [todayString capitalizedString];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+    
+    NSLog(@"USER DEFAULTS: %ld", (long)[[NSUserDefaults standardUserDefaults] integerForKey:@"dailyMovement"]);
+
+    [self.navigationItem setHidesBackButton:YES];
 }
 
 - (void)didReceiveMemoryWarning

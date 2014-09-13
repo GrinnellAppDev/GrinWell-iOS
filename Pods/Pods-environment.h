@@ -18,6 +18,12 @@
 #define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK 17
 #define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK 0
 
+// MGConferenceDatePicker
+#define COCOAPODS_POD_AVAILABLE_MGConferenceDatePicker
+#define COCOAPODS_VERSION_MAJOR_MGConferenceDatePicker 0
+#define COCOAPODS_VERSION_MINOR_MGConferenceDatePicker 0
+#define COCOAPODS_VERSION_PATCH_MGConferenceDatePicker 2
+
 // Parse
 #define COCOAPODS_POD_AVAILABLE_Parse
 #define COCOAPODS_VERSION_MAJOR_Parse 1

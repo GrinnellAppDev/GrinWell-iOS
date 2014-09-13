@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SleepViewController : UIViewController
+@interface SleepViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 // OUTLETS
 @property (weak, nonatomic) IBOutlet UITextField *fellAsleepField;
 @property (weak, nonatomic) IBOutlet UITextField *wokeUpField;
 @property (weak, nonatomic) IBOutlet UILabel *sleepTimeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIPickerView *hourPicker;
+
+// ACTION
+- (IBAction)back:(id)sender;
+- (IBAction)done:(id)sender;
+
 
 @end

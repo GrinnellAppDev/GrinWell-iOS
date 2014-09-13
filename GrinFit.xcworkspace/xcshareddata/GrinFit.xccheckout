@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5D2956DA-1BA0-4D8D-A915-8B6324F6A24E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GrinFit</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6F1C7223-D8FE-4BB6-9B18-424594F449A6</key>
+		<string>https://github.com/GrinnellAppDev/GrinFit.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GrinFit.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6F1C7223-D8FE-4BB6-9B18-424594F449A6</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/GrinnellAppDev/GrinFit.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6F1C7223-D8FE-4BB6-9B18-424594F449A6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6F1C7223-D8FE-4BB6-9B18-424594F449A6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GrinFit</string>
+		</dict>
+	</array>
+</dict>
+</plist>

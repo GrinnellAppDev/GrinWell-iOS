@@ -36,7 +36,8 @@
 		67B0C52619C29E2600657D09 /* ExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C52519C29E2600657D09 /* ExerciseViewController.m */; };
 		67B0C52919C29E3200657D09 /* SleepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C52819C29E3200657D09 /* SleepViewController.m */; };
 		67B0C52C19C29E3D00657D09 /* DietViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C52B19C29E3D00657D09 /* DietViewController.m */; };
-		67B0C52F19C2A05200657D09 /* WalkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C52E19C2A05200657D09 /* WalkingViewController.m */; };
+		67F39EFD19C49E3400E47A95 /* RestoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F39EFC19C49E3400E47A95 /* RestoreViewController.m */; };
+		67F39F0019C49E5D00E47A95 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F39EFF19C49E5D00E47A95 /* StatsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,8 +90,10 @@
 		67B0C52819C29E3200657D09 /* SleepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepViewController.m; sourceTree = "<group>"; };
 		67B0C52A19C29E3D00657D09 /* DietViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DietViewController.h; sourceTree = "<group>"; };
 		67B0C52B19C29E3D00657D09 /* DietViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DietViewController.m; sourceTree = "<group>"; };
-		67B0C52D19C2A05200657D09 /* WalkingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkingViewController.h; sourceTree = "<group>"; };
-		67B0C52E19C2A05200657D09 /* WalkingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkingViewController.m; sourceTree = "<group>"; };
+		67F39EFB19C49E3400E47A95 /* RestoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestoreViewController.h; sourceTree = "<group>"; };
+		67F39EFC19C49E3400E47A95 /* RestoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestoreViewController.m; sourceTree = "<group>"; };
+		67F39EFE19C49E5D00E47A95 /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewController.h; sourceTree = "<group>"; };
+		67F39EFF19C49E5D00E47A95 /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewController.m; sourceTree = "<group>"; };
 		CC73ECB1F30C41FCA1B517DC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,8 +175,10 @@
 		67B0C49819C294C600657D09 /* GrinFit */ = {
 			isa = PBXGroup;
 			children = (
-				67B0C52D19C2A05200657D09 /* WalkingViewController.h */,
-				67B0C52E19C2A05200657D09 /* WalkingViewController.m */,
+				67F39EFE19C49E5D00E47A95 /* StatsViewController.h */,
+				67F39EFF19C49E5D00E47A95 /* StatsViewController.m */,
+				67F39EFB19C49E3400E47A95 /* RestoreViewController.h */,
+				67F39EFC19C49E3400E47A95 /* RestoreViewController.m */,
 				67B0C52419C29E2600657D09 /* ExerciseViewController.h */,
 				67B0C52519C29E2600657D09 /* ExerciseViewController.m */,
 				67B0C52719C29E3200657D09 /* SleepViewController.h */,
@@ -359,9 +364,10 @@
 				67B0C52619C29E2600657D09 /* ExerciseViewController.m in Sources */,
 				67B0C4A319C294C600657D09 /* AppDelegate.m in Sources */,
 				67B0C4DC19C297E100657D09 /* SignUpViewController.m in Sources */,
+				67F39F0019C49E5D00E47A95 /* StatsViewController.m in Sources */,
+				67F39EFD19C49E3400E47A95 /* RestoreViewController.m in Sources */,
 				67B0C49F19C294C600657D09 /* main.m in Sources */,
 				67B0C52C19C29E3D00657D09 /* DietViewController.m in Sources */,
-				67B0C52F19C2A05200657D09 /* WalkingViewController.m in Sources */,
 				67B0C52319C29D6F00657D09 /* MainViewController.m in Sources */,
 				67B0C52919C29E3200657D09 /* SleepViewController.m in Sources */,
 				67B0C4DF19C2980100657D09 /* InitialViewController.m in Sources */,

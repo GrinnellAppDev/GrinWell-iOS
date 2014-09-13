@@ -7,12 +7,17 @@
 //
 
 #import "ExerciseViewController.h"
+#import <Parse/Parse.h>
 
 @interface ExerciseViewController ()
 
 @end
 
-@implementation ExerciseViewController
+@implementation ExerciseViewController {
+    PFUser *currentUser;
+    int totalMovement;
+    NSUserDefaults *userDefaults;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,12 +32,31 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    currentUser = [PFUser currentUser];
+    userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    if (![userDefaults integerForKey:@"dailyMovement"]) { // if it's the next day
+        [userDefaults setInteger:0 forKey:@"dailyMovement"];
+    }
+    else {
+        // get the number from parse for total daily movement
+    }
+
+    totalMovement = [userDefaults integerForKey:@"dailyMovement"];
+    [self updateLabel];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:YES];
+    
+    [userDefaults setInteger:totalMovement forKey:@"dailyMovement"];
 }
 
 /*
@@ -46,4 +70,34 @@
 }
 */
 
+- (IBAction)back:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)submit:(id)sender {
+}
+
+- (IBAction)add15:(id)sender {
+    NSLog(@"Pressed 15!");
+    totalMovement = totalMovement + 15;
+    
+    [self updateLabel];
+}
+
+- (IBAction)add30:(id)sender {
+    NSLog(@"Pressed 30!");
+    totalMovement = totalMovement + 30;
+    
+    [self updateLabel];
+}
+
+- (void) updateLabel {
+    if (totalMovement < 60) {
+        self.totalDailyHours.text = [NSString stringWithFormat:@"%i minutes", totalMovement];
+    }
+    else {
+        self.totalDailyHours.text = [NSString stringWithFormat:@"%.02f hrs", totalMovement/60.0];
+    }
+}
 @end
