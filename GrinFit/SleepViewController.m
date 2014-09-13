@@ -33,6 +33,9 @@
     
     int totalHours;
     int totalMinutes;
+    
+    NSString *wokeUpText;
+    NSString *fellAsleepText;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -64,6 +67,25 @@
     
     userDefaults = [NSUserDefaults standardUserDefaults];
     
+    
+    if ([userDefaults integerForKey:@"sleepHours"] || [userDefaults integerForKey:@"sleepMinutes"]) {
+        self.fellAsleepField.enabled = NO;
+        self.wokeUpField.enabled = NO;
+        
+        totalHours = [userDefaults integerForKey:@"sleepHours"];
+        totalMinutes = [userDefaults integerForKey:@"sleepMinutes"];
+        
+        self.sleepTimeLabel.text = [NSString stringWithFormat:@"You slept for: %i hours and %i minutes!", totalHours, totalMinutes];
+        
+        self.fellAsleepField.text = [userDefaults objectForKey:@"fellAsleepString"];
+        self.wokeUpField.text = [userDefaults objectForKey:@"wokeUpString"];
+        
+        [self updateLabel];
+    }
+    else {
+        totalMinutes = 0;
+        totalHours = 0;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,7 +107,6 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     // get rid of keyboard when you touch anywhere on the screen
-    self.hourPicker.hidden = NO;
     [self.view endEditing:YES];
 }
 
@@ -127,27 +148,7 @@
 }
 
 - (IBAction)done:(id)sender {
-    totalHours = 0;
     
-    NSLog(@"Sleep hour: %i", militaryTimeSleepHour);
-    
-    if (militaryTimeSleepHour < militaryTimeWakeHour) {
-        totalHours = militaryTimeWakeHour - militaryTimeSleepHour;
-    }
-    
-    else {
-        NSLog(@"Sleep hour: %i", militaryTimeSleepHour);
-        totalHours = 24 - militaryTimeSleepHour + militaryTimeWakeHour;
-    }
-    
-    if (sleepMinutes < wakeMinutes) {
-        totalMinutes = wakeMinutes - sleepMinutes;
-    }
-    else {
-        totalMinutes = 60 - sleepMinutes + wakeMinutes;
-    }
-    
-    self.sleepTimeLabel.text = [NSString stringWithFormat:@"You slept for: %i hours and %i minutes!", totalHours, totalMinutes];
 }
 
 // The number of columns of data
@@ -187,6 +188,9 @@
     
     if (sleepSelected) {
         self.fellAsleepField.text = [NSString stringWithFormat:@"%@:%@ %@", hour, minute, timeOfDay];
+        fellAsleepText = [NSString stringWithFormat:@"%@:%@ %@", hour, minute, timeOfDay];
+        
+        NSLog(@"UP - Fell asleep text: %@", fellAsleepText);
         
         if ([timeOfDay isEqual:@"PM"]) {
             militaryTimeSleepHour = [hour intValue] + 12;
@@ -196,9 +200,13 @@
         }
         
         sleepMinutes = [minute intValue];
+        [userDefaults setObject:fellAsleepText forKey:@"fellAsleepString"];
     }
     else {
         self.wokeUpField.text = [NSString stringWithFormat:@"%@:%@ %@", hour, minute, timeOfDay];
+        wokeUpText = [NSString stringWithFormat:@"%@:%@ %@", hour, minute, timeOfDay];
+        
+        NSLog(@"UP - Woke up text: %@", wokeUpText);
         
         if ([timeOfDay isEqual:@"PM"]) {
             militaryTimeWakeHour = [hour intValue] + 12;
@@ -208,7 +216,42 @@
         }
         
         wakeMinutes = [minute intValue];
+        
+        [userDefaults setObject:wokeUpText forKey:@"wokeUpString"];
+        
+        [self updateLabel];
     }
+}
+
+- (void) updateLabel {
+    
+        if (militaryTimeSleepHour < militaryTimeWakeHour) {
+            totalHours = militaryTimeWakeHour - militaryTimeSleepHour;
+        }
+    
+        else {
+            totalHours = 24 - militaryTimeSleepHour + militaryTimeWakeHour;
+        }
+    
+        if (sleepMinutes < wakeMinutes) {
+            totalMinutes = wakeMinutes - sleepMinutes;
+        }
+        else {
+            totalMinutes = 60 - sleepMinutes + wakeMinutes;
+        }
+    
+    if (![userDefaults objectForKey:@"sleepHours"] || ![userDefaults objectForKey:@"sleepMinutes"]) {
+        [userDefaults setInteger:totalHours forKey:@"sleepHours"];
+        [userDefaults setInteger:totalMinutes forKey:@"sleepMinutes"];
+        
+        self.sleepTimeLabel.text = [NSString stringWithFormat:@"You slept for: %i hours and %i minutes!", totalHours, totalMinutes];
+    }
+    
+    else {
+        self.sleepTimeLabel.text = [NSString stringWithFormat:@"You slept for: %i hours and %i minutes!", [userDefaults integerForKey:@"sleepHours"], [userDefaults integerForKey:@"sleepMinutes"]];
+    }
+    
+    
 }
 
 

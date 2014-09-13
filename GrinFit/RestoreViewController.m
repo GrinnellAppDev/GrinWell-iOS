@@ -16,6 +16,8 @@
 @implementation RestoreViewController {
     PFUser *currentUser;
     NSArray *btnArray;
+    NSUserDefaults *userDefaults;
+    int ignore;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,11 +34,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     currentUser = [PFUser currentUser];
+    userDefaults = [NSUserDefaults standardUserDefaults];
     
     btnArray = [NSArray arrayWithObjects:self.meditationBtn, self.readingBtn, self.listenBtn, self.playBtn, self.knittingBtn, self.otherBtn, nil];
     
     self.succeededLabel.textColor = [UIColor redColor];
     self.succeededLabel.text = @"NAY!";
+    
+    if ([userDefaults boolForKey:@"selectedSet"]) {
+        ignore = [userDefaults integerForKey:@"selectedButton"];
+        [self selectedSet];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,7 +72,16 @@
 - (IBAction)selectButton:(id)sender {
     
     [sender setSelected:YES];
-    int ignore = [btnArray indexOfObject:sender];
+    ignore = [btnArray indexOfObject:sender];
+    
+    [self selectedSet];
+    
+    [userDefaults setBool:YES forKey:@"selectedSet"];
+    [userDefaults setInteger:ignore forKey:@"selectedButton"];
+}
+
+- (void) selectedSet {
+    [(UIButton*)btnArray[ignore] setSelected:YES];
     
     for (int i = 0; i < [btnArray count]; i++) {
         if (i != ignore) {
@@ -75,8 +92,5 @@
     
     self.succeededLabel.text = @"YAY";
     self.succeededLabel.textColor = [UIColor greenColor];
-}
-
-- (IBAction)listen:(id)sender {
 }
 @end

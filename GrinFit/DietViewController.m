@@ -35,7 +35,7 @@
     
     userDefaults = [NSUserDefaults standardUserDefaults];
     
-    if (true) { // today's date
+    if (![userDefaults integerForKey:@"veggiesToday"] || ![userDefaults integerForKey:@"fruitToday"]) { // today's date
         [userDefaults setInteger:0 forKey:@"veggiesToday"];
         [userDefaults setInteger:0 forKey:@"fruitToday"];
     }
@@ -45,12 +45,18 @@
     
     veggies = [userDefaults integerForKey:@"veggiesToday"];
     fruit = [userDefaults integerForKey:@"fruitToday"];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    [self updateLabel];
 }
 
 /*
@@ -73,19 +79,22 @@
     fruit++;
     self.fruitLabel.text = [NSString stringWithFormat:@"Fruit: %i", fruit];
     
-    if (fruit + veggies < 5) {
-        self.amountSucceeded.textColor = [UIColor redColor];
-    }
-    else {
-        self.amountSucceeded.textColor = [UIColor greenColor];
-    }
-    self.amountSucceeded.text = [NSString stringWithFormat:@"%i/5", fruit + veggies];
+    [self updateLabel];
 }
 
 - (IBAction)plusVeggie:(id)sender {
     veggies++;
     self.veggieLabel.text = [NSString stringWithFormat:@"Vegetable: %i", veggies];
     
+    [self updateLabel];
+}
+
+- (IBAction)back:(id)sender {
+    
+    [[self navigationController] popViewControllerAnimated:YES];
+}
+
+- (void) updateLabel {
     if (fruit + veggies < 5) {
         self.amountSucceeded.textColor = [UIColor redColor];
     }
@@ -93,11 +102,6 @@
         self.amountSucceeded.textColor = [UIColor greenColor];
     }
     self.amountSucceeded.text = [NSString stringWithFormat:@"%i/5", fruit + veggies];
-}
-
-- (IBAction)back:(id)sender {
-    
-    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 @end
