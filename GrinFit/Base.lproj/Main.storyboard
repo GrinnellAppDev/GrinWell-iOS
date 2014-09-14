@@ -20,7 +20,7 @@
                                 <rect key="frame" x="51" y="160" width="213" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="Uxb-03-JGW"/>
                                 </connections>
@@ -119,7 +119,7 @@
                                 <rect key="frame" x="67" y="146" width="203" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="cJb-vD-SAr" id="BM4-ZQ-ssA"/>
                                 </connections>
@@ -375,6 +375,22 @@
                                     <segue destination="uuR-mU-1Sb" kind="push" id="XsK-ra-92Q"/>
                                 </connections>
                             </button>
+                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crown" translatesAutoresizingMaskIntoConstraints="NO" id="mdL-eJ-drD">
+                                <rect key="frame" x="9" y="91" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crown" translatesAutoresizingMaskIntoConstraints="NO" id="CoK-0A-WyW">
+                                <rect key="frame" x="84" y="91" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crown" translatesAutoresizingMaskIntoConstraints="NO" id="FZk-Yn-phU">
+                                <rect key="frame" x="159" y="91" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crown" translatesAutoresizingMaskIntoConstraints="NO" id="VJM-Be-QIB">
+                                <rect key="frame" x="234" y="91" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -383,12 +399,16 @@
                     <connections>
                         <outlet property="currentDate" destination="xux-zN-4qH" id="chR-De-a6z"/>
                         <outlet property="eatBtn" destination="vKy-Oa-4zM" id="lY0-Kn-mD4"/>
+                        <outlet property="eatCrown" destination="CoK-0A-WyW" id="AuS-pc-YWg"/>
                         <outlet property="eatRK" destination="pFU-EP-iOi" id="3Z3-fQ-n7U"/>
                         <outlet property="moveBtn" destination="1Wj-k1-fek" id="xvS-qO-Iv2"/>
                         <outlet property="moveRK" destination="JDl-5F-iF9" id="OmH-dW-5Lx"/>
+                        <outlet property="movementCrown" destination="mdL-eJ-drD" id="bhL-67-xTo"/>
                         <outlet property="restoreBtn" destination="sD9-PU-KTl" id="NaU-of-Fbz"/>
+                        <outlet property="restoreCrown" destination="VJM-Be-QIB" id="kYc-5H-jqF"/>
                         <outlet property="restoreRK" destination="tcE-QK-7iQ" id="wFK-7Q-PEB"/>
                         <outlet property="sleepBtn" destination="4bq-lP-hC4" id="5RQ-Bp-gV1"/>
+                        <outlet property="sleepCrown" destination="FZk-Yn-phU" id="ucj-Xe-2Sy"/>
                         <outlet property="sleepRK" destination="Dnu-c8-6YN" id="Rux-LM-hBk"/>
                     </connections>
                 </viewController>
@@ -1316,6 +1336,7 @@
         <image name="backArrow6" width="57" height="100"/>
         <image name="backArrow7" width="57" height="100"/>
         <image name="carrot" width="102" height="160"/>
+        <image name="crown" width="146" height="146"/>
         <image name="eat" width="93" height="92"/>
         <image name="move" width="68" height="102"/>
         <image name="restore" width="75" height="92"/>

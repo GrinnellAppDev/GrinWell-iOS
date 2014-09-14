@@ -20,6 +20,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *eatBtn;
 @property (weak, nonatomic) IBOutlet UIButton *sleepBtn;
 @property (weak, nonatomic) IBOutlet UIButton *restoreBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *eatCrown;
+@property (weak, nonatomic) IBOutlet UIImageView *movementCrown;
+@property (weak, nonatomic) IBOutlet UIImageView *restoreCrown;
+@property (weak, nonatomic) IBOutlet UIImageView *sleepCrown;
 
 // ACTIONS
 - (IBAction)saveObj:(id)sender;

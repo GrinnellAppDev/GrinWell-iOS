@@ -71,6 +71,11 @@
     statsToday = [PFObject objectWithClassName:@"Dates"];
     statsToday[@"createdBy"] = currentUser.objectId;
     
+    self.movementCrown.hidden = YES;
+    self.restoreCrown.hidden = YES;
+    self.sleepCrown.hidden = YES;
+    self.eatCrown.hidden = YES;
+    
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -110,6 +115,7 @@
     if ([userDefaults integerForKey:@"dailyMovement"] >= 30) {
         self.moveBtn.titleLabel.textColor = [UIColor greenColor];
         self.moveBtn.backgroundColor = [UIColor colorWithRed:240.0/255.0 green:229.0/255.0 blue:128.0/255.0 alpha:1.0];
+        self.movementCrown.hidden = NO;
     }
     
     if ((([userDefaults integerForKey:@"sleepHours"] * 60) + [userDefaults integerForKey:@"sleepMinutes"]) >= 480) {
@@ -120,6 +126,7 @@
     if (([userDefaults integerForKey:@"veggiesToday"] + [userDefaults integerForKey:@"fruitToday"]) >= 5) {
         self.eatBtn.titleLabel.textColor = [UIColor greenColor];
         self.eatBtn.backgroundColor = [UIColor colorWithRed:176.0/255.0 green:233.0/255.0 blue:119.0/255.0 alpha:1.0];
+        self.eatCrown.hidden = NO;
     }
     
     if ([userDefaults boolForKey:@"selectedSet"]) {

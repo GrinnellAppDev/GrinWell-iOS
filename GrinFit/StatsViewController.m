@@ -32,7 +32,6 @@
     // Do any additional setup after loading the view.
     
     currentUser = [PFUser currentUser];
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
 
 }
 
