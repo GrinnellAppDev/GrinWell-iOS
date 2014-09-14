@@ -35,7 +35,7 @@
     
     currentUser = [PFUser currentUser];
     userDefaults = [NSUserDefaults standardUserDefaults];
-    
+        
     if (![userDefaults integerForKey:@"dailyMovement"]) { // if it's the next day
         [userDefaults setInteger:0 forKey:@"dailyMovement"];
     }
@@ -45,6 +45,8 @@
 
     totalMovement = [userDefaults integerForKey:@"dailyMovement"];
     [self updateLabel];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -94,7 +96,7 @@
 
 - (void) updateLabel {
     if (totalMovement < 60) {
-        self.totalDailyHours.text = [NSString stringWithFormat:@"%i minutes", totalMovement];
+        self.totalDailyHours.text = [NSString stringWithFormat:@"%i min", totalMovement];
     }
     else {
         self.totalDailyHours.text = [NSString stringWithFormat:@"%.02f hrs", totalMovement/60.0];

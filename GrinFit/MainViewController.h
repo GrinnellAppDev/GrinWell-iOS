@@ -16,5 +16,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *eatRK;
 @property (weak, nonatomic) IBOutlet UILabel *sleepRK;
 @property (weak, nonatomic) IBOutlet UILabel *restoreRK;
+@property (weak, nonatomic) IBOutlet UIButton *moveBtn;
+@property (weak, nonatomic) IBOutlet UIButton *eatBtn;
+@property (weak, nonatomic) IBOutlet UIButton *sleepBtn;
+@property (weak, nonatomic) IBOutlet UIButton *restoreBtn;
+
+// ACTIONS
+- (IBAction)saveObj:(id)sender;
 
 @end

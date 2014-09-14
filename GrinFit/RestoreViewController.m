@@ -16,6 +16,10 @@
 @implementation RestoreViewController {
     PFUser *currentUser;
     NSArray *btnArray;
+    NSArray *BGArray;
+    NSArray *colorSet;
+    NSArray *textColorSet;
+    NSMutableArray *selectedArray;
     NSUserDefaults *userDefaults;
     int ignore;
 }
@@ -37,12 +41,19 @@
     userDefaults = [NSUserDefaults standardUserDefaults];
     
     btnArray = [NSArray arrayWithObjects:self.meditationBtn, self.readingBtn, self.listenBtn, self.playBtn, self.knittingBtn, self.otherBtn, nil];
+    BGArray = [NSArray arrayWithObjects:self.BG0, self.BG1, self.BG2, self.BG3, self.BG4, self.BG5, nil];
+    colorSet = [NSArray arrayWithObjects:[UIColor colorWithRed:147.0/255.0 green:70.0/255.0 blue:63.0/255.0 alpha:1.0], [UIColor colorWithRed:195.0/255.0 green:93.0/255.0 blue:83.0/255.0 alpha:1.0], [UIColor colorWithRed:225.0/255.0 green:113.0/255.0 blue:102.0/255.0 alpha:1.0], [UIColor colorWithRed:240.0/255.0 green:138.0/255.0 blue:128.0/255.0 alpha:1.0], [UIColor colorWithRed:247.0/255.0 green:171.0/255.0 blue:164.0/255.0 alpha:1.0], [UIColor colorWithRed:255.0/255.0 green:207.0/255.0 blue:203.0/255.0 alpha:1.0], nil];
+    textColorSet = [NSArray arrayWithObjects:[UIColor colorWithRed:255.0/255.0 green:207.0/255.0 blue:203.0/255.0 alpha:1.0], [UIColor colorWithRed:247.0/255.0 green:171.0/255.0 blue:164.0/255.0 alpha:1.0], [UIColor colorWithRed:240.0/255.0 green:138.0/255.0 blue:128.0/255.0 alpha:1.0], [UIColor colorWithRed:225.0/255.0 green:113.0/255.0 blue:102.0/255.0 alpha:1.0], [UIColor colorWithRed:195.0/255.0 green:93.0/255.0 blue:83.0/255.0 alpha:1.0], [UIColor colorWithRed:147.0/255.0 green:70.0/255.0 blue:63.0/255.0 alpha:1.0], nil];
     
-    self.succeededLabel.textColor = [UIColor redColor];
-    self.succeededLabel.text = @"NAY!";
+    //self.succeededLabel.textColor = [UIColor redColor];
+    //self.succeededLabel.text = @"NAY!";
+    
+    selectedArray = [NSMutableArray new];
     
     if ([userDefaults boolForKey:@"selectedSet"]) {
-        ignore = [userDefaults integerForKey:@"selectedButton"];
+        if ([userDefaults objectForKey:@"selectedButtons"]) {
+            selectedArray = [userDefaults objectForKey:@"selectedButtons"];
+        }
         [self selectedSet];
     }
 }
@@ -71,26 +82,31 @@
 
 - (IBAction)selectButton:(id)sender {
     
-    [sender setSelected:YES];
+    //[sender setSelected:YES];
     ignore = [btnArray indexOfObject:sender];
     
-    [self selectedSet];
+    [selectedArray addObject:[NSNumber numberWithInt:ignore]];
+    
+    //[(UIButton*)sender setSelected:YES];
+    UIButton *myBtn = (UIButton*)sender;
+    myBtn.titleLabel.textColor = textColorSet[ignore];
+    [BGArray[ignore] setBackgroundColor:colorSet[ignore]];
     
     [userDefaults setBool:YES forKey:@"selectedSet"];
-    [userDefaults setInteger:ignore forKey:@"selectedButton"];
+    [userDefaults setObject:selectedArray forKey:@"selectedButtons"];
 }
 
 - (void) selectedSet {
-    [(UIButton*)btnArray[ignore] setSelected:YES];
-    
-    for (int i = 0; i < [btnArray count]; i++) {
-        if (i != ignore) {
-            [(UIButton*)btnArray[i] setSelected:NO];
-            [(UIButton*)btnArray[i] setEnabled:NO];
-        }
+    for (int i = 0; i < [selectedArray count]; i++) {
+        int selectedNum = [selectedArray[i] intValue];
+        UIButton *currentBtn = (UIButton*)btnArray[selectedNum];
+        currentBtn.titleLabel.textColor = textColorSet[selectedNum];
+        [BGArray[selectedNum] setBackgroundColor:colorSet[selectedNum]];
+        
+        [(UIButton*)btnArray[selectedNum] setEnabled:NO];
     }
-    
-    self.succeededLabel.text = @"YAY";
-    self.succeededLabel.textColor = [UIColor greenColor];
+
+    //self.succeededLabel.text = @"YAY";
+    //self.succeededLabel.textColor = [UIColor greenColor];
 }
 @end

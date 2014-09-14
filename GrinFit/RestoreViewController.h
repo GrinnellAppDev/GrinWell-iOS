@@ -19,6 +19,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
 @property (weak, nonatomic) IBOutlet UIButton *listenBtn;
 @property (weak, nonatomic) IBOutlet UIButton *otherBtn;
+@property (weak, nonatomic) IBOutlet UIView *BG0;
+@property (weak, nonatomic) IBOutlet UIView *BG1;
+@property (weak, nonatomic) IBOutlet UIView *BG2;
+@property (weak, nonatomic) IBOutlet UIView *BG3;
+@property (weak, nonatomic) IBOutlet UIView *BG4;
+@property (weak, nonatomic) IBOutlet UIView *BG5;
 
 // ACTIONS
 - (IBAction)back:(id)sender;

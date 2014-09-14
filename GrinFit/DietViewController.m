@@ -44,7 +44,9 @@
     }
     
     veggies = [userDefaults integerForKey:@"veggiesToday"];
+    self.veggieLabel.text = [NSString stringWithFormat:@"Vegetables: %i", veggies];
     fruit = [userDefaults integerForKey:@"fruitToday"];
+    self.fruitLabel.text = [NSString stringWithFormat:@"Fruit: %i", fruit];
     
 }
 
@@ -57,6 +59,13 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     [self updateLabel];
+    
+    self.carrotBtn.layer.cornerRadius = 62;
+    self.carrotBtn.layer.masksToBounds = YES;
+    
+    self.appleBtn.layer.cornerRadius = 62;
+    self.appleBtn.layer.masksToBounds = YES;
+
 }
 
 /*
@@ -96,10 +105,10 @@
 
 - (void) updateLabel {
     if (fruit + veggies < 5) {
-        self.amountSucceeded.textColor = [UIColor redColor];
+        //self.amountSucceeded.textColor = [UIColor redColor];
     }
     else {
-        self.amountSucceeded.textColor = [UIColor greenColor];
+        //self.amountSucceeded.textColor = [UIColor greenColor];
     }
     self.amountSucceeded.text = [NSString stringWithFormat:@"%i/5", fruit + veggies];
 }

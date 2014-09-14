@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *veggieLabel;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UILabel *amountSucceeded;
+@property (weak, nonatomic) IBOutlet UIButton *carrotBtn;
+@property (weak, nonatomic) IBOutlet UIButton *appleBtn;
+
 
 
 // METHODS
