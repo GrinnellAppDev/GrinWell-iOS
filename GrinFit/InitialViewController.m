@@ -41,6 +41,9 @@
     } else {
         NSLog(@"There is no current user.");
     }
+    
+    self.usernameField.text = @"";
+    self.passwordField.text = @"";
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,29 +10,29 @@
 	<string>GrinFit</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>6F1C7223-D8FE-4BB6-9B18-424594F449A6</key>
+		<key>B99902A8D1374668ABC307DC42CF3F4786A36ACC</key>
 		<string>https://github.com/GrinnellAppDev/GrinFit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>GrinFit.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>6F1C7223-D8FE-4BB6-9B18-424594F449A6</key>
+		<key>B99902A8D1374668ABC307DC42CF3F4786A36ACC</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/GrinnellAppDev/GrinFit.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>6F1C7223-D8FE-4BB6-9B18-424594F449A6</string>
+	<string>B99902A8D1374668ABC307DC42CF3F4786A36ACC</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>6F1C7223-D8FE-4BB6-9B18-424594F449A6</string>
+			<string>B99902A8D1374668ABC307DC42CF3F4786A36ACC</string>
 			<key>IDESourceControlWCCName</key>
 			<string>GrinFit</string>
 		</dict>

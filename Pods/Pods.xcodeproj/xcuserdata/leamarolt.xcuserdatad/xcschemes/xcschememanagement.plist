@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-ECSlidingViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Facebook-iOS-SDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,7 +24,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-PNChart.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Parse.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-STTwitter.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-UICountingLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-WSCoachMarksView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>139A0E3EDF5F40FF8813E464</key>
+		<key>22A3E95E1CB64369A071C473</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1A742F42F58C4FA99933314A</key>
+		<key>37C0A11E028E4420B88D0F23</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8FE78F9693E043ED82D60A62</key>
+		<key>387B2D4CEAE140FB87368872</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>964B4B57E6E64065B0CD2C1E</key>
+		<key>3EFDA958781A4E39B96A088B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D4ACA381CCB742BA9F098B50</key>
+		<key>5453DB1344F247EC8A43E782</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>67812066800744769186D8B7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6B1E7CB3C53C470B9E62CBC6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>77F4AB7FECFD4F62863DCCE4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A23F3D9F1D6A44C0A8349077</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC43206D77FD4BC4BEAB1A31</key>
 		<dict>
 			<key>primary</key>
 			<true/>

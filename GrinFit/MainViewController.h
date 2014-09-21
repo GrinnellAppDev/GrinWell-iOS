@@ -27,5 +27,6 @@
 
 // ACTIONS
 - (IBAction)saveObj:(id)sender;
+- (IBAction)logOut:(id)sender;
 
 @end

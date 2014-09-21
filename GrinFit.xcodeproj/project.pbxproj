@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		3E6E26FE0B8C485288D0C7AD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2A73E19A0441D58BB6ADF5 /* libPods.a */; };
+		6770B47E19CE2C1500B5EBFE /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B47D19CE2C1500B5EBFE /* MenuViewController.m */; };
+		6770B48119CE30F500B5EBFE /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B48019CE30F500B5EBFE /* NotificationsViewController.m */; };
+		6770B48F19CE647400B5EBFE /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6770B48E19CE647400B5EBFE /* Accounts.framework */; };
+		6770B49119CE647A00B5EBFE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6770B49019CE647A00B5EBFE /* Social.framework */; };
+		6770B49319CE647F00B5EBFE /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6770B49219CE647F00B5EBFE /* Twitter.framework */; };
+		6770B49819CE6BC100B5EBFE /* GrinWellCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B49719CE6BC100B5EBFE /* GrinWellCell.m */; };
+		6770B4B919CE8F1000B5EBFE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6770B49A19CE8F0F00B5EBFE /* .gitignore */; };
+		6770B4BB19CE8F1000B5EBFE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6770B49D19CE8F0F00B5EBFE /* LICENSE */; };
+		6770B4BC19CE8F1000B5EBFE /* KILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B4A019CE8F0F00B5EBFE /* KILabel.m */; };
+		6770B4C719CE8F1000B5EBFE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6770B4B719CE8F1000B5EBFE /* LICENSE */; };
+		6770B4C819CE8F1000B5EBFE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 6770B4B819CE8F1000B5EBFE /* README.md */; };
+		6770B4D119CE98E800B5EBFE /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B4D019CE98E800B5EBFE /* Tweet.m */; };
+		6770B4D419CEAC6200B5EBFE /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B4D319CEAC6200B5EBFE /* AboutViewController.m */; };
+		6770B4D719CEAC6C00B5EBFE /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B4D619CEAC6C00B5EBFE /* GuideViewController.m */; };
 		67B0C49319C294C600657D09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C49219C294C600657D09 /* Foundation.framework */; };
 		67B0C49519C294C600657D09 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C49419C294C600657D09 /* CoreGraphics.framework */; };
 		67B0C49719C294C600657D09 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C49619C294C600657D09 /* UIKit.framework */; };
@@ -52,6 +66,27 @@
 
 /* Begin PBXFileReference section */
 		5D2A73E19A0441D58BB6ADF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6770B47C19CE2C1500B5EBFE /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		6770B47D19CE2C1500B5EBFE /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		6770B47F19CE30F500B5EBFE /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
+		6770B48019CE30F500B5EBFE /* NotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsViewController.m; sourceTree = "<group>"; };
+		6770B48E19CE647400B5EBFE /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		6770B49019CE647A00B5EBFE /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		6770B49219CE647F00B5EBFE /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		6770B49619CE6BC100B5EBFE /* GrinWellCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrinWellCell.h; sourceTree = "<group>"; };
+		6770B49719CE6BC100B5EBFE /* GrinWellCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrinWellCell.m; sourceTree = "<group>"; };
+		6770B49A19CE8F0F00B5EBFE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		6770B49D19CE8F0F00B5EBFE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		6770B49F19CE8F0F00B5EBFE /* KILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KILabel.h; sourceTree = "<group>"; };
+		6770B4A019CE8F0F00B5EBFE /* KILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KILabel.m; sourceTree = "<group>"; };
+		6770B4B719CE8F1000B5EBFE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		6770B4B819CE8F1000B5EBFE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6770B4CF19CE98E800B5EBFE /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		6770B4D019CE98E800B5EBFE /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		6770B4D219CEAC6200B5EBFE /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		6770B4D319CEAC6200B5EBFE /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		6770B4D519CEAC6C00B5EBFE /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
+		6770B4D619CEAC6C00B5EBFE /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		67B0C48F19C294C600657D09 /* GrinFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrinFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67B0C49219C294C600657D09 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		67B0C49419C294C600657D09 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -102,6 +137,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6770B49319CE647F00B5EBFE /* Twitter.framework in Frameworks */,
+				6770B49119CE647A00B5EBFE /* Social.framework in Frameworks */,
+				6770B48F19CE647400B5EBFE /* Accounts.framework in Frameworks */,
 				67B0C4D819C296A600657D09 /* SystemConfiguration.framework in Frameworks */,
 				67B0C4D619C2969F00657D09 /* StoreKit.framework in Frameworks */,
 				67B0C4D419C2969B00657D09 /* Security.framework in Frameworks */,
@@ -131,6 +169,85 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6770B48219CE544D00B5EBFE /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				6770B49919CE8F0F00B5EBFE /* KILabel-master */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		6770B49419CE6B8100B5EBFE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6770B49619CE6BC100B5EBFE /* GrinWellCell.h */,
+				6770B49719CE6BC100B5EBFE /* GrinWellCell.m */,
+				6770B4CF19CE98E800B5EBFE /* Tweet.h */,
+				6770B4D019CE98E800B5EBFE /* Tweet.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6770B49519CE6B8800B5EBFE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6770B47F19CE30F500B5EBFE /* NotificationsViewController.h */,
+				6770B48019CE30F500B5EBFE /* NotificationsViewController.m */,
+				6770B47C19CE2C1500B5EBFE /* MenuViewController.h */,
+				6770B47D19CE2C1500B5EBFE /* MenuViewController.m */,
+				67F39EFE19C49E5D00E47A95 /* StatsViewController.h */,
+				67F39EFF19C49E5D00E47A95 /* StatsViewController.m */,
+				67F39EFB19C49E3400E47A95 /* RestoreViewController.h */,
+				67F39EFC19C49E3400E47A95 /* RestoreViewController.m */,
+				67B0C52419C29E2600657D09 /* ExerciseViewController.h */,
+				67B0C52519C29E2600657D09 /* ExerciseViewController.m */,
+				67B0C52719C29E3200657D09 /* SleepViewController.h */,
+				67B0C52819C29E3200657D09 /* SleepViewController.m */,
+				67B0C52A19C29E3D00657D09 /* DietViewController.h */,
+				67B0C52B19C29E3D00657D09 /* DietViewController.m */,
+				67B0C52119C29D6F00657D09 /* MainViewController.h */,
+				67B0C52219C29D6F00657D09 /* MainViewController.m */,
+				67B0C4DD19C2980100657D09 /* InitialViewController.h */,
+				67B0C4DE19C2980100657D09 /* InitialViewController.m */,
+				67B0C4DA19C297E100657D09 /* SignUpViewController.h */,
+				67B0C4DB19C297E100657D09 /* SignUpViewController.m */,
+				6770B4D219CEAC6200B5EBFE /* AboutViewController.h */,
+				6770B4D319CEAC6200B5EBFE /* AboutViewController.m */,
+				6770B4D519CEAC6C00B5EBFE /* GuideViewController.h */,
+				6770B4D619CEAC6C00B5EBFE /* GuideViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		6770B49919CE8F0F00B5EBFE /* KILabel-master */ = {
+			isa = PBXGroup;
+			children = (
+				6770B49A19CE8F0F00B5EBFE /* .gitignore */,
+				6770B49C19CE8F0F00B5EBFE /* KILabel */,
+				6770B4B719CE8F1000B5EBFE /* LICENSE */,
+				6770B4B819CE8F1000B5EBFE /* README.md */,
+			);
+			path = "KILabel-master";
+			sourceTree = "<group>";
+		};
+		6770B49C19CE8F0F00B5EBFE /* KILabel */ = {
+			isa = PBXGroup;
+			children = (
+				6770B49D19CE8F0F00B5EBFE /* LICENSE */,
+				6770B49E19CE8F0F00B5EBFE /* Source */,
+			);
+			path = KILabel;
+			sourceTree = "<group>";
+		};
+		6770B49E19CE8F0F00B5EBFE /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				6770B49F19CE8F0F00B5EBFE /* KILabel.h */,
+				6770B4A019CE8F0F00B5EBFE /* KILabel.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		67B0C48619C294C600657D09 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +271,9 @@
 		67B0C49119C294C600657D09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6770B49219CE647F00B5EBFE /* Twitter.framework */,
+				6770B49019CE647A00B5EBFE /* Social.framework */,
+				6770B48E19CE647400B5EBFE /* Accounts.framework */,
 				67B0C4D719C296A600657D09 /* SystemConfiguration.framework */,
 				67B0C4D519C2969F00657D09 /* StoreKit.framework */,
 				67B0C4D319C2969B00657D09 /* Security.framework */,
@@ -175,22 +295,9 @@
 		67B0C49819C294C600657D09 /* GrinFit */ = {
 			isa = PBXGroup;
 			children = (
-				67F39EFE19C49E5D00E47A95 /* StatsViewController.h */,
-				67F39EFF19C49E5D00E47A95 /* StatsViewController.m */,
-				67F39EFB19C49E3400E47A95 /* RestoreViewController.h */,
-				67F39EFC19C49E3400E47A95 /* RestoreViewController.m */,
-				67B0C52419C29E2600657D09 /* ExerciseViewController.h */,
-				67B0C52519C29E2600657D09 /* ExerciseViewController.m */,
-				67B0C52719C29E3200657D09 /* SleepViewController.h */,
-				67B0C52819C29E3200657D09 /* SleepViewController.m */,
-				67B0C52A19C29E3D00657D09 /* DietViewController.h */,
-				67B0C52B19C29E3D00657D09 /* DietViewController.m */,
-				67B0C52119C29D6F00657D09 /* MainViewController.h */,
-				67B0C52219C29D6F00657D09 /* MainViewController.m */,
-				67B0C4DD19C2980100657D09 /* InitialViewController.h */,
-				67B0C4DE19C2980100657D09 /* InitialViewController.m */,
-				67B0C4DA19C297E100657D09 /* SignUpViewController.h */,
-				67B0C4DB19C297E100657D09 /* SignUpViewController.m */,
+				6770B49519CE6B8800B5EBFE /* Views */,
+				6770B49419CE6B8100B5EBFE /* Models */,
+				6770B48219CE544D00B5EBFE /* Vendor */,
 				67B0C4A119C294C600657D09 /* AppDelegate.h */,
 				67B0C4A219C294C600657D09 /* AppDelegate.m */,
 				67B0C4A419C294C600657D09 /* Main.storyboard */,
@@ -278,6 +385,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Grinnell AppDev";
 				TargetAttributes = {
+					67B0C48E19C294C600657D09 = {
+						DevelopmentTeam = H69TS4DPUJ;
+					};
 					67B0C4AF19C294C700657D09 = {
 						TestTargetID = 67B0C48E19C294C600657D09;
 					};
@@ -307,6 +417,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6770B4C719CE8F1000B5EBFE /* LICENSE in Resources */,
+				6770B4BB19CE8F1000B5EBFE /* LICENSE in Resources */,
+				6770B4B919CE8F1000B5EBFE /* .gitignore in Resources */,
 				67B0C4AB19C294C600657D09 /* Images.xcassets in Resources */,
 				67B0C49D19C294C600657D09 /* InfoPlist.strings in Resources */,
 				67B0C4A619C294C600657D09 /* Main.storyboard in Resources */,
@@ -363,14 +476,22 @@
 			files = (
 				67B0C52619C29E2600657D09 /* ExerciseViewController.m in Sources */,
 				67B0C4A319C294C600657D09 /* AppDelegate.m in Sources */,
+				6770B4BC19CE8F1000B5EBFE /* KILabel.m in Sources */,
 				67B0C4DC19C297E100657D09 /* SignUpViewController.m in Sources */,
 				67F39F0019C49E5D00E47A95 /* StatsViewController.m in Sources */,
 				67F39EFD19C49E3400E47A95 /* RestoreViewController.m in Sources */,
+				6770B48119CE30F500B5EBFE /* NotificationsViewController.m in Sources */,
 				67B0C49F19C294C600657D09 /* main.m in Sources */,
 				67B0C52C19C29E3D00657D09 /* DietViewController.m in Sources */,
+				6770B4D419CEAC6200B5EBFE /* AboutViewController.m in Sources */,
 				67B0C52319C29D6F00657D09 /* MainViewController.m in Sources */,
+				6770B4C819CE8F1000B5EBFE /* README.md in Sources */,
+				6770B4D119CE98E800B5EBFE /* Tweet.m in Sources */,
 				67B0C52919C29E3200657D09 /* SleepViewController.m in Sources */,
+				6770B47E19CE2C1500B5EBFE /* MenuViewController.m in Sources */,
 				67B0C4DF19C2980100657D09 /* InitialViewController.m in Sources */,
+				6770B49819CE6BC100B5EBFE /* GrinWellCell.m in Sources */,
+				6770B4D719CEAC6C00B5EBFE /* GuideViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,10 +617,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrinFit/GrinFit-Prefix.pch";
 				INFOPLIST_FILE = "GrinFit/GrinFit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -510,10 +634,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrinFit/GrinFit-Prefix.pch";
 				INFOPLIST_FILE = "GrinFit/GrinFit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

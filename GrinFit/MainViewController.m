@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import <Parse/Parse.h>
+#import "UIViewController+ECSlidingViewController.h"
 
 @interface MainViewController ()
 
@@ -36,6 +37,8 @@
     
     currentUser = [PFUser currentUser];
     userDefaults = [NSUserDefaults standardUserDefaults];
+    [self configureECSlidingController];
+    //[self.view addGestureRecognizer:self.slidingViewController.panGesture];
     
     today = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -179,6 +182,28 @@
     self.sleepBtn.layer.masksToBounds = YES;
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
+- (IBAction)logOut:(id)sender {
+    
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    NSLog(@"WE ARE DOING STUFF.");
+    [PFUser logOut];
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+
+}
+
+#pragma mark - ECSLIDING
+
+- (void)configureECSlidingController {
+    // setup swipe and button gestures for the sliding view controller
+    //self.slidingViewController.topViewControllerStoryboardId = @"MainViewController";
+    self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
+    self.slidingViewController.customAnchoredGestures = @[];
+    
+    // TO DO: Swipe to the right to reveal menu
 }
 
 @end

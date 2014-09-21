@@ -219,9 +219,10 @@
         wakeMinutes = [minute intValue];
         
         [userDefaults setObject:wokeUpText forKey:@"wokeUpString"];
-        
         [self updateLabel];
+        
     }
+    
 }
 
 - (void) updateLabel {

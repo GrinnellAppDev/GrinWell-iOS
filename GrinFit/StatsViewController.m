@@ -8,6 +8,7 @@
 
 #import "StatsViewController.h"
 #import <Parse/Parse.h>
+#import "UIViewController+ECSlidingViewController.h"
 
 @interface StatsViewController ()
 
@@ -32,6 +33,7 @@
     // Do any additional setup after loading the view.
     
     currentUser = [PFUser currentUser];
+    [self configureECSlidingController];
 
 }
 
@@ -56,4 +58,16 @@
     
     [[self navigationController] popViewControllerAnimated:YES];
 }
+
+#pragma mark - ECSLIDING
+
+- (void)configureECSlidingController {
+    // setup swipe and button gestures for the sliding view controller
+    //self.slidingViewController.topViewControllerStoryboardId = @"GuideViewController";
+    self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
+    self.slidingViewController.customAnchoredGestures = @[];
+    
+    // TO DO: Swipe to the right to reveal menu
+}
+
 @end
