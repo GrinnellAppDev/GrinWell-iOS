@@ -60,25 +60,23 @@
     
     [userDefaults setInteger:totalMovement forKey:@"dailyMovement"];
     
+    NSNumber *movementNum = [NSNumber numberWithInt:[userDefaults integerForKey:@"dailyMovement"]];
+    
     PFQuery *dateQuery = [PFQuery queryWithClassName:@"Dates"];
     [dateQuery whereKey:@"createdBy" equalTo:currentUser.objectId];
     dateQuery.limit = 1;
-    __block PFObject *lastDate = [PFObject objectWithClassName:@"Dates"];
     [dateQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-        lastDate = object;
-    }];
-    
-    NSNumber *movementNum = [NSNumber numberWithInt:[userDefaults integerForKey:@"dailyMovement"]];
-    lastDate[@"MovementAmount"] = movementNum;
-    
-    lastDate[@"MovementAmount"] = movementNum;
-    [lastDate saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (error) {
-            // NSLog(@"wompwomp");
+        if (!error) {
+            object[@"MovementAmount"] = movementNum;
+            [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (error) {
+                    // NSLog(@"wompwomp");
+                }
+                else {
+                    // NSLog(@"MOVEMENT: Saved!");
+                };
+            }];
         }
-        else {
-            // NSLog(@"MOVEMENT: Saved!");
-        };
     }];
 }
 

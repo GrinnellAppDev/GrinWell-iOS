@@ -37,17 +37,17 @@
     userDefaults = [NSUserDefaults standardUserDefaults];
     
     if (![userDefaults integerForKey:@"veggiesToday"] || ![userDefaults integerForKey:@"fruitToday"]) { // today's date
+        NSLog(@"There are NOT things in veggies");
         [userDefaults setInteger:0 forKey:@"veggiesToday"];
         [userDefaults setInteger:0 forKey:@"fruitToday"];
     }
     else {
-        
+        NSLog(@"There ARE things in veggies: %i or fruit: %i", [userDefaults integerForKey:@"veggiesToday"], [userDefaults integerForKey:@"fruitToday"]);
+        veggies = [userDefaults integerForKey:@"veggiesToday"];
+        self.veggieLabel.text = [NSString stringWithFormat:@"Vegetables: %i", veggies];
+        fruit = [userDefaults integerForKey:@"fruitToday"];
+        self.fruitLabel.text = [NSString stringWithFormat:@"Fruit: %i", fruit];
     }
-    
-    veggies = [userDefaults integerForKey:@"veggiesToday"];
-    self.veggieLabel.text = [NSString stringWithFormat:@"Vegetables: %i", veggies];
-    fruit = [userDefaults integerForKey:@"fruitToday"];
-    self.fruitLabel.text = [NSString stringWithFormat:@"Fruit: %i", fruit];
     
     currentUser = [PFUser currentUser];
     
@@ -88,24 +88,24 @@
     [userDefaults setInteger:veggies forKey:@"veggiesToday"];
     [userDefaults setInteger:fruit forKey:@"fruitToday"];
     
+    NSNumber *veggiesNFruits = [NSNumber numberWithInt:veggies + fruit];
+    
     PFQuery *dateQuery = [PFQuery queryWithClassName:@"Dates"];
     [dateQuery whereKey:@"createdBy" equalTo:currentUser.objectId];
     dateQuery.limit = 1;
-    __block PFObject *lastDate = [PFObject objectWithClassName:@"Dates"];
     [dateQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-        lastDate = object;
-    }];
-    
-    NSNumber *veggiesNFruits = [NSNumber numberWithInt:veggies + fruit];
-    
-    lastDate[@"FruitsAndVegetables"] = veggiesNFruits;
-    [lastDate saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (error) {
-            // NSLog(@"wompwomp");
+        if (!error) {
+            object[@"FruitsAndVegetables"] = veggiesNFruits;
+            
+            [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (error) {
+                    // NSLog(@"wompwomp");
+                }
+                else {
+                    // NSLog(@"WE SAVED SUCCESSFULLLYYYY!!!");
+                };
+            }];
         }
-        else {
-           // NSLog(@"WE SAVED SUCCESSFULLLYYYY!!!");
-        };
     }];
     
 }

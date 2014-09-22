@@ -85,26 +85,25 @@
         
         [self updateLabel];
         
-        PFQuery *dateQuery = [PFQuery queryWithClassName:@"Dates"];
-        [dateQuery whereKey:@"createdBy" equalTo:currentUser.objectId];
-        dateQuery.limit = 1;
-        __block PFObject *lastDate = [PFObject objectWithClassName:@"Dates"];
-        [dateQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-            lastDate = object;
-        }];
-        
         float sleep = (([userDefaults integerForKey:@"sleepHours"] * 60) + [userDefaults integerForKey:@"sleepMinutes"]) / 60;
         
         NSNumber *sleepNum = [NSNumber numberWithFloat:sleep];
         
-        lastDate[@"Sleep"] = sleepNum;
-        [lastDate saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (error) {
-                NSLog(@"wompwomp");
+        PFQuery *dateQuery = [PFQuery queryWithClassName:@"Dates"];
+        [dateQuery whereKey:@"createdBy" equalTo:currentUser.objectId];
+        dateQuery.limit = 1;
+        [dateQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+            if (!error) {
+                object[@"Sleep"] = sleepNum;
+                [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (error) {
+                        NSLog(@"wompwomp");
+                    }
+                    else {
+                        NSLog(@"SLEEP: Saved!");
+                    };
+                }];
             }
-            else {
-                NSLog(@"SLEEP: Saved!");
-            };
         }];
         
     }

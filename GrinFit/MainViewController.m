@@ -40,6 +40,11 @@
     // Do any additional setup after loading the view.
     currentUser = [PFUser currentUser];
     
+    // SAVE THE USER IN THE INSTALLATION
+    PFInstallation *installation = [PFInstallation currentInstallation];
+    installation[@"user"] = [PFUser currentUser];
+    [installation saveInBackground];
+    
     userDefaults = [NSUserDefaults standardUserDefaults];
     [self configureECSlidingController];
     //[self.view addGestureRecognizer:self.slidingViewController.panGesture];
@@ -77,6 +82,8 @@
     [super viewDidAppear:YES];
 
     [self.navigationItem setHidesBackButton:YES];
+    [self changeBtns];
+    [self updateKingtonsStats];
     
 }
 

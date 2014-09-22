@@ -45,15 +45,15 @@
     BGArray = [NSMutableArray arrayWithArray:[NSArray arrayWithObjects:self.BG0, self.BG1, self.BG2, self.BG3, self.BG4, self.BG5, self.BG6, self.BG7, self.BG8, nil]];
     
     colorSet = [NSMutableArray arrayWithArray:[NSArray arrayWithObjects:
-                                               [UIColor colorWithRed:205.0/255.0 green:113.0/255.0 blue:102.0/255.0 alpha:1.0],
-                                               [UIColor colorWithRed:185.0/255.0 green:93.0/255.0 blue:83.0/255.0 alpha:1.0],
-                                               [UIColor colorWithRed:207.0/255.0 green:171.0/255.0 blue:164.0/255.0 alpha:1.0],
                                                [UIColor colorWithRed:147.0/255.0 green:70.0/255.0 blue:63.0/255.0 alpha:1.0],
+                                               [UIColor colorWithRed:185.0/255.0 green:93.0/255.0 blue:83.0/255.0 alpha:1.0],
+                                               [UIColor colorWithRed:205.0/255.0 green:113.0/255.0 blue:102.0/255.0 alpha:1.0],
                                                [UIColor colorWithRed:210.0/255.0 green:138.0/255.0 blue:128.0/255.0 alpha:1.0],
-                                               [UIColor colorWithRed:255.0/255.0 green:207.0/255.0 blue:203.0/255.0 alpha:1.0],
+                                               [UIColor colorWithRed:207.0/255.0 green:171.0/255.0 blue:164.0/255.0 alpha:1.0],
                                                [UIColor colorWithRed:235.0/255.0 green:207.0/255.0 blue:203.0/255.0 alpha:1.0],
-                                               [UIColor colorWithRed:205.0/255.0 green:207.0/255.0 blue:203.0/255.0 alpha:1.0],
+                                               [UIColor colorWithRed:225.0/255.0 green:207.0/255.0 blue:203.0/255.0 alpha:1.0],
                                                [UIColor colorWithRed:215.0/255.0 green:207.0/255.0 blue:203.0/255.0 alpha:1.0],
+                                               [UIColor colorWithRed:205.0/255.0 green:207.0/255.0 blue:203.0/255.0 alpha:1.0],
                                                [UIColor colorWithRed:235.0/255.0 green:207.0/255.0 blue:203.0/255.0 alpha:1.0],
                                                 nil]];
     
@@ -129,25 +129,27 @@
 - (void) viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:NO];
     
+    BOOL wellnessCompleted = [userDefaults boolForKey:@"selectedSet"];
+    
     PFQuery *dateQuery = [PFQuery queryWithClassName:@"Dates"];
     [dateQuery whereKey:@"createdBy" equalTo:currentUser.objectId];
     dateQuery.limit = 1;
-    __block PFObject *lastDate = [PFObject objectWithClassName:@"Dates"];
     [dateQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-        lastDate = object;
-    }];
-    
-    BOOL wellnessCompleted = [userDefaults boolForKey:@"selectedSet"];
-    lastDate[@"WellnessActivity"] = [NSNumber numberWithBool:wellnessCompleted];
-    
-    [lastDate saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (error) {
-            // NSLog(@"wompwomp");
+        if (!error) {
+            object[@"WellnessActivity"] = [NSNumber numberWithBool:wellnessCompleted];
+            
+            [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (error) {
+                    // NSLog(@"wompwomp");
+                }
+                else {
+                    // NSLog(@"WELLNESS: Saved!");
+                };
+            }];
         }
-        else {
-           // NSLog(@"WELLNESS: Saved!");
-        };
+        
     }];
+    
 
 }
 @end
