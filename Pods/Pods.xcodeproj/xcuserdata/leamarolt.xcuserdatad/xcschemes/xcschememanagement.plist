@@ -24,6 +24,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MZAppearance.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-MZFormSheetController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-PNChart.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,52 +67,62 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>22A3E95E1CB64369A071C473</key>
+		<key>00D79BBAE55A4A9A88F6742C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>37C0A11E028E4420B88D0F23</key>
+		<key>2FE9BF22667E49639291A8E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>387B2D4CEAE140FB87368872</key>
+		<key>3F3D1878C553426098FD64DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3EFDA958781A4E39B96A088B</key>
+		<key>45569397EE4B4292BA38D77A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5453DB1344F247EC8A43E782</key>
+		<key>530A509F2B9D46D592352ABB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>67812066800744769186D8B7</key>
+		<key>81F7CA5C0C9B4DC19A572C81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6B1E7CB3C53C470B9E62CBC6</key>
+		<key>83E772D4830A4F0EA357CDB9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>77F4AB7FECFD4F62863DCCE4</key>
+		<key>A5CF786D4CC94FF79110D9D8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A23F3D9F1D6A44C0A8349077</key>
+		<key>A9F18D46C79545D49AE5E2CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DC43206D77FD4BC4BEAB1A31</key>
+		<key>CC6738B538684CABB80CDB28</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA56964E7C5847D6BC3A5C31</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FCF29846390B4F139FA8F87E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

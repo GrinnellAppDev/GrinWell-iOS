@@ -19,6 +19,10 @@
     NSDate *today;
     NSUserDefaults *userDefaults;
     PFObject *statsToday;
+    int move;
+    int eat;
+    int sleep;
+    BOOL restore;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -34,8 +38,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     currentUser = [PFUser currentUser];
+    
     userDefaults = [NSUserDefaults standardUserDefaults];
     [self configureECSlidingController];
     //[self.view addGestureRecognizer:self.slidingViewController.panGesture];
@@ -44,19 +48,6 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MMM dd"];
     NSString *todayString = [dateFormatter stringFromDate:today];
-    
-    NSDate *parseDate;
-    PFQuery *dateQuery = [PFUser query];
-    [dateQuery whereKey:@"createdBy" equalTo:[currentUser objectId]];
-    [dateQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // success
-            
-        }
-        else {
-            // we failed
-        }
-    }];
     
     self.currentDate.text = [todayString capitalizedString];
     
@@ -70,14 +61,15 @@
         }
     }];
     
-    // CREATE THE STATS OBJECT
-    statsToday = [PFObject objectWithClassName:@"Dates"];
-    statsToday[@"createdBy"] = currentUser.objectId;
-    
     self.movementCrown.hidden = YES;
     self.restoreCrown.hidden = YES;
     self.sleepCrown.hidden = YES;
     self.eatCrown.hidden = YES;
+    
+    // parse object
+    // CREATE THE STATS OBJECT
+    
+    [self newDayStats];
     
 }
 
@@ -85,13 +77,18 @@
     [super viewDidAppear:YES];
 
     [self.navigationItem setHidesBackButton:YES];
-    [self changeBtns];
-    [self newDayStats];
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     [self circularizeButtons];
+    [self changeBtns];
+    [self updateKingtonsStats];
+}
+
+- (void) viewDidLayoutSubviews {
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -118,54 +115,89 @@
     if ([userDefaults integerForKey:@"dailyMovement"] >= 30) {
         self.moveBtn.titleLabel.textColor = [UIColor greenColor];
         self.moveBtn.backgroundColor = [UIColor colorWithRed:240.0/255.0 green:229.0/255.0 blue:128.0/255.0 alpha:1.0];
-        self.movementCrown.hidden = NO;
+        if (move < [userDefaults integerForKey:@"dailyMovement"]) {
+            self.movementCrown.hidden = NO;
+        }
     }
     
     if ((([userDefaults integerForKey:@"sleepHours"] * 60) + [userDefaults integerForKey:@"sleepMinutes"]) >= 480) {
         self.sleepBtn.titleLabel.textColor = [UIColor greenColor];
         self.sleepBtn.backgroundColor = [UIColor colorWithRed:120.0/255.0 green:216.0/255.0 blue:239.0/255.0 alpha:1.0];
+        
+        if (sleep < [userDefaults integerForKey:@"sleepHours"]) {
+            self.sleepCrown.hidden = NO;
+        }
     }
     
     if (([userDefaults integerForKey:@"veggiesToday"] + [userDefaults integerForKey:@"fruitToday"]) >= 5) {
         self.eatBtn.titleLabel.textColor = [UIColor greenColor];
         self.eatBtn.backgroundColor = [UIColor colorWithRed:176.0/255.0 green:233.0/255.0 blue:119.0/255.0 alpha:1.0];
-        self.eatCrown.hidden = NO;
+        
+        if (eat < ([userDefaults integerForKey:@"veggiesToday"] + [userDefaults integerForKey:@"fruitToday"])) {
+            self.eatCrown.hidden = NO;
+        }
     }
     
     if ([userDefaults boolForKey:@"selectedSet"]) {
         self.restoreBtn.titleLabel.textColor = [UIColor greenColor];
         self.restoreBtn.backgroundColor = [UIColor colorWithRed:240.0/255.0 green:138.0/255.0 blue:128.0/255.0 alpha:1.0];
+        
+        if (restore && ![userDefaults boolForKey:@"selectedSet"]) {
+            self.restoreCrown.hidden = NO;
+        }
     }
 }
 
 - (void) newDayStats {
+    
     NSDate *thisDay = [NSDate date];
-    statsToday[@"Date"] = thisDay;
-    int veggies = [userDefaults integerForKey:@"veggiesToday"];
-    int fruit = [userDefaults integerForKey:@"fruitToday"];
     
-    NSNumber *fruitNVeggies = [NSNumber numberWithInt:veggies + fruit];
-    statsToday[@"FruitsAndVegetables"] = fruitNVeggies;
+    statsToday = [PFObject objectWithClassName:@"Dates"];
+    PFQuery *dateQuery = [PFQuery queryWithClassName:@"Dates"];
+    [dateQuery whereKey:@"createdBy" equalTo:currentUser.objectId];
+    PFObject *lastDate = [dateQuery getFirstObject];
+    lastDate[@"createdBy"] = currentUser.objectId;
     
-    float sleep = (([userDefaults integerForKey:@"sleepHours"] * 60) + [userDefaults integerForKey:@"sleepMinutes"]) / 60;
+    NSLog(@"what is the first object?: %@", lastDate);
+    NSLog(@"What is the date of the first object? %@", lastDate[@"Date"]);
+    NSLog(@"What is the current date? %@", thisDay);
     
-    NSNumber *sleepNum = [NSNumber numberWithFloat:sleep];
-    statsToday[@"Sleep"] = sleepNum;
+    if ([self compareDate:lastDate[@"Date"] toDate:thisDay] == 1) {
+        statsToday = lastDate;
+        NSLog(@"I AM NOT CREATING A NEW DATE!");
+    }
+    
+    else {
+        NSLog(@"I AM CREATING A NEW DATE...");
+    
+        statsToday[@"createdBy"] = currentUser.objectId;
+        statsToday[@"Date"] = thisDay;
+        int veggies = [userDefaults integerForKey:@"veggiesToday"];
+        int fruit = [userDefaults integerForKey:@"fruitToday"];
+    
+        NSNumber *fruitNVeggies = [NSNumber numberWithInt:veggies + fruit];
+        statsToday[@"FruitsAndVegetables"] = fruitNVeggies;
+    
+        float sleep = (([userDefaults integerForKey:@"sleepHours"] * 60) + [userDefaults integerForKey:@"sleepMinutes"]) / 60;
+    
+        NSNumber *sleepNum = [NSNumber numberWithFloat:sleep];
+        statsToday[@"Sleep"] = sleepNum;
     
     
-    NSNumber *movementNum = [NSNumber numberWithInt:[userDefaults integerForKey:@"dailyMovement"]];
-    statsToday[@"MovementAmount"] = movementNum;
+        NSNumber *movementNum = [NSNumber numberWithInt:[userDefaults integerForKey:@"dailyMovement"]];
+        statsToday[@"MovementAmount"] = movementNum;
 
     
-    BOOL wellnessCompleted = [userDefaults boolForKey:@"selectedSet"];
+        BOOL wellnessCompleted = [userDefaults boolForKey:@"selectedSet"];
     
-    statsToday[@"WellnessActivity"] = [NSNumber numberWithBool:wellnessCompleted];
+        statsToday[@"WellnessActivity"] = [NSNumber numberWithBool:wellnessCompleted];
     
-    [statsToday saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {
-            NSLog(@"MY OBJECT: %@", statsToday);
+        [statsToday saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+                NSLog(@"MY OBJECT: %@", statsToday);
+            }
+        }];
         }
-    }];
 }
 
 - (void) circularizeButtons {
@@ -191,7 +223,9 @@
     NSLog(@"WE ARE DOING STUFF.");
     [PFUser logOut];
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    UIStoryboard *initialStoryboard = [UIStoryboard storyboardWithName:@"SignUp" bundle:nil];
+    UIViewController *slideViewController = [initialStoryboard instantiateInitialViewController];
+    [self presentViewController:slideViewController animated:NO completion:nil];
 
 }
 
@@ -204,6 +238,70 @@
     self.slidingViewController.customAnchoredGestures = @[];
     
     // TO DO: Swipe to the right to reveal menu
+}
+
+- (int) compareDate:(NSDate *)date1 toDate: (NSDate *)date2 {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *comp1 = [calendar components:(NSDayCalendarUnit | NSMonthCalendarUnit) fromDate:date1];
+    NSDateComponents *comp2 = [calendar components:(NSDayCalendarUnit | NSMonthCalendarUnit) fromDate:date2];
+    
+    NSLog(@"THE COMPONENTS: %@ %@", comp1, comp2);
+    
+    if ((comp1.day == comp2.day) && (comp1.month == comp2.month)) {
+            NSLog(@"the dates are the same!!!");
+        return 1;
+    }
+    else {
+        NSLog(@"THEY AINT THE SAME!");
+        return 0;
+    }
+}
+
+- (void) updateKingtonsStats {
+    PFObject *kington = [PFObject objectWithClassName:@"Dates"];
+    PFQuery *kingtonQuery = [PFQuery queryWithClassName:@"Dates"];
+    [kingtonQuery whereKey:@"createdBy" equalTo:@"EvFCcNYqRu"];
+    kington = [kingtonQuery getFirstObject];
+    
+    NSLog(@"kington object: %@", kington);
+    
+    if (kington) {
+        self.moveRK.text = [NSString stringWithFormat:@"%@/30min", kington[@"MovementAmount"]];
+        self.eatRK.text = [NSString stringWithFormat:@"%@/5", kington[@"FruitsAndVegetables"]];
+        self.sleepRK.text = [NSString stringWithFormat:@"%@/8hrs", kington[@"Sleep"]];
+        if ([kington[@"WellnessActivity"] boolValue]) {
+            self.restoreRK.text = @"Complete";
+        }
+    }
+    
+    NSLog(@"what is the movement amount? %@", kington[@"MovementAmount"]);
+    NSNumber *moveNS = kington[@"MovementAmount"];
+    move = [moveNS intValue];
+    
+    NSNumber *eatNS = kington[@"FruitsAndVegetables"];
+    eat = [eatNS intValue];
+    
+    NSNumber *sleepNS = kington[@"Sleep"];
+    sleep = [sleepNS intValue];
+    
+    restore = [kington[@"WellnessActivity"] boolValue];
+    
+    if (move >= 30) {
+        self.moveBgRK.backgroundColor = [UIColor colorWithRed:240.0/255.0 green:229.0/255.0 blue:128.0/255.0 alpha:1.0];
+    }
+    
+    if (eat >= 5) {
+        self.eatBgRK.backgroundColor = [UIColor colorWithRed:176.0/255.0 green:233.0/255.0 blue:119.0/255.0 alpha:1.0];
+    }
+    
+    if (sleep >= 8) {
+        self.sleepBgRK.backgroundColor = [UIColor colorWithRed:120.0/255.0 green:216.0/255.0 blue:239.0/255.0 alpha:1.0];
+    }
+    
+    if (restore) {
+        self.restoreBgRK.backgroundColor = [UIColor colorWithRed:240.0/255.0 green:138.0/255.0 blue:128.0/255.0 alpha:1.0];
+    }
 }
 
 @end

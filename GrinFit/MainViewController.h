@@ -24,6 +24,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *movementCrown;
 @property (weak, nonatomic) IBOutlet UIImageView *restoreCrown;
 @property (weak, nonatomic) IBOutlet UIImageView *sleepCrown;
+@property (weak, nonatomic) IBOutlet UIView *moveBgRK;
+@property (weak, nonatomic) IBOutlet UIView *eatBgRK;
+@property (weak, nonatomic) IBOutlet UIView *sleepBgRK;
+@property (weak, nonatomic) IBOutlet UIView *restoreBgRK;
 
 // ACTIONS
 - (IBAction)saveObj:(id)sender;

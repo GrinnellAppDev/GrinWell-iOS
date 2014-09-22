@@ -17,6 +17,7 @@
     int veggies;
     int fruit;
     NSUserDefaults *userDefaults;
+    PFUser *currentUser;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -48,6 +49,8 @@
     fruit = [userDefaults integerForKey:@"fruitToday"];
     self.fruitLabel.text = [NSString stringWithFormat:@"Fruit: %i", fruit];
     
+    currentUser = [PFUser currentUser];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,6 +61,9 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
+}
+
+- (void) viewDidLayoutSubviews {
     [self updateLabel];
     
     self.carrotBtn.layer.cornerRadius = 62;
@@ -65,7 +71,6 @@
     
     self.appleBtn.layer.cornerRadius = 62;
     self.appleBtn.layer.masksToBounds = YES;
-
 }
 
 /*
@@ -82,6 +87,27 @@
 - (void) viewDidDisappear:(BOOL)animated {
     [userDefaults setInteger:veggies forKey:@"veggiesToday"];
     [userDefaults setInteger:fruit forKey:@"fruitToday"];
+    
+    PFQuery *dateQuery = [PFQuery queryWithClassName:@"Dates"];
+    [dateQuery whereKey:@"createdBy" equalTo:currentUser.objectId];
+    dateQuery.limit = 1;
+    __block PFObject *lastDate = [PFObject objectWithClassName:@"Dates"];
+    [dateQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        lastDate = object;
+    }];
+    
+    NSNumber *veggiesNFruits = [NSNumber numberWithInt:veggies + fruit];
+    
+    lastDate[@"FruitsAndVegetables"] = veggiesNFruits;
+    [lastDate saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            // NSLog(@"wompwomp");
+        }
+        else {
+           // NSLog(@"WE SAVED SUCCESSFULLLYYYY!!!");
+        };
+    }];
+    
 }
 
 - (IBAction)plusFruit:(id)sender {

@@ -36,6 +36,8 @@
     
     NSString *wokeUpText;
     NSString *fellAsleepText;
+    
+    PFUser *currentUser;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -51,6 +53,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    currentUser = [PFUser currentUser];
         
     pickerData = @[
                     @[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12],
@@ -80,6 +84,29 @@
         self.wokeUpField.text = [userDefaults objectForKey:@"wokeUpString"];
         
         [self updateLabel];
+        
+        PFQuery *dateQuery = [PFQuery queryWithClassName:@"Dates"];
+        [dateQuery whereKey:@"createdBy" equalTo:currentUser.objectId];
+        dateQuery.limit = 1;
+        __block PFObject *lastDate = [PFObject objectWithClassName:@"Dates"];
+        [dateQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+            lastDate = object;
+        }];
+        
+        float sleep = (([userDefaults integerForKey:@"sleepHours"] * 60) + [userDefaults integerForKey:@"sleepMinutes"]) / 60;
+        
+        NSNumber *sleepNum = [NSNumber numberWithFloat:sleep];
+        
+        lastDate[@"Sleep"] = sleepNum;
+        [lastDate saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (error) {
+                NSLog(@"wompwomp");
+            }
+            else {
+                NSLog(@"SLEEP: Saved!");
+            };
+        }];
+        
     }
     else {
         totalMinutes = 0;
@@ -252,7 +279,6 @@
     else {
         self.sleepTimeLabel.text = [NSString stringWithFormat:@"You slept for: %i hours and %i minutes!", [userDefaults integerForKey:@"sleepHours"], [userDefaults integerForKey:@"sleepMinutes"]];
     }
-    
     
 }
 

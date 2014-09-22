@@ -35,7 +35,7 @@
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser) {
         NSLog(@"Is there a current user? IT IS: %@", currentUser);
-        [self toMain];
+        [self showMainScreen];;
         // Send the user to the main screen if they're already logged in
         
     } else {
@@ -71,7 +71,7 @@
                                     block:^(PFUser *user, NSError *error) {
                                         if (user) {
                                             
-                                            [self performSegueWithIdentifier:@"toMain" sender:self];
+                                            [self showMainScreen];
                                             
                                             
                                         } else {
@@ -116,6 +116,12 @@
 - (void) saveData {
     username = self.usernameField.text;
     password = self.passwordField.text;
+}
+
+- (void)showMainScreen {
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *slideViewController = [mainStoryboard instantiateInitialViewController];
+    [self presentViewController:slideViewController animated:NO completion:nil];
 }
 
 @end

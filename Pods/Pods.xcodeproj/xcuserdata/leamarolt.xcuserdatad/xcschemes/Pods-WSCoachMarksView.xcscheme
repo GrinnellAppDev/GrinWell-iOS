@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "37C0A11E028E4420B88D0F23"
+               BlueprintIdentifier = "530A509F2B9D46D592352ABB"
                BuildableName = "libPods-WSCoachMarksView.a"
                BlueprintName = "Pods-WSCoachMarksView"
                ReferencedContainer = "container:Pods.xcodeproj">

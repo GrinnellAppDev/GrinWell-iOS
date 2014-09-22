@@ -12,6 +12,7 @@
 
 // OUTLETS
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UILabel *username;
 
 // ACTIONS
 - (IBAction)back:(id)sender;

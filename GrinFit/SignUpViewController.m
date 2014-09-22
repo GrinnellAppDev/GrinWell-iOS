@@ -79,7 +79,7 @@
             }
             else {
 
-                [self performSegueWithIdentifier:@"toInitial" sender:self];
+                [self showMainScreen];
             }
             
         }];
@@ -116,6 +116,12 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
+}
+
+- (void)showMainScreen {
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *slideViewController = [mainStoryboard instantiateInitialViewController];
+    [self presentViewController:slideViewController animated:NO completion:nil];
 }
 
 @end

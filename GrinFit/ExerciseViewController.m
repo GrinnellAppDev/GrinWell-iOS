@@ -59,6 +59,27 @@
     [super viewDidDisappear:YES];
     
     [userDefaults setInteger:totalMovement forKey:@"dailyMovement"];
+    
+    PFQuery *dateQuery = [PFQuery queryWithClassName:@"Dates"];
+    [dateQuery whereKey:@"createdBy" equalTo:currentUser.objectId];
+    dateQuery.limit = 1;
+    __block PFObject *lastDate = [PFObject objectWithClassName:@"Dates"];
+    [dateQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        lastDate = object;
+    }];
+    
+    NSNumber *movementNum = [NSNumber numberWithInt:[userDefaults integerForKey:@"dailyMovement"]];
+    lastDate[@"MovementAmount"] = movementNum;
+    
+    lastDate[@"MovementAmount"] = movementNum;
+    [lastDate saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            // NSLog(@"wompwomp");
+        }
+        else {
+            // NSLog(@"MOVEMENT: Saved!");
+        };
+    }];
 }
 
 /*
@@ -81,14 +102,14 @@
 }
 
 - (IBAction)add15:(id)sender {
-    NSLog(@"Pressed 15!");
+    // NSLog(@"Pressed 15!");
     totalMovement = totalMovement + 15;
     
     [self updateLabel];
 }
 
 - (IBAction)add30:(id)sender {
-    NSLog(@"Pressed 30!");
+    // NSLog(@"Pressed 30!");
     totalMovement = totalMovement + 30;
     
     [self updateLabel];

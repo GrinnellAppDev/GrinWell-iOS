@@ -18,13 +18,19 @@
 @property (weak, nonatomic) IBOutlet UIButton *knittingBtn;
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
 @property (weak, nonatomic) IBOutlet UIButton *listenBtn;
-@property (weak, nonatomic) IBOutlet UIButton *otherBtn;
+@property (weak, nonatomic) IBOutlet UIButton *natureBtn;
 @property (weak, nonatomic) IBOutlet UIView *BG0;
 @property (weak, nonatomic) IBOutlet UIView *BG1;
 @property (weak, nonatomic) IBOutlet UIView *BG2;
 @property (weak, nonatomic) IBOutlet UIView *BG3;
 @property (weak, nonatomic) IBOutlet UIView *BG4;
 @property (weak, nonatomic) IBOutlet UIView *BG5;
+@property (weak, nonatomic) IBOutlet UIButton *volunteerBtn;
+@property (weak, nonatomic) IBOutlet UIButton *religionBtn;
+@property (weak, nonatomic) IBOutlet UIButton *yogaBtn;
+@property (weak, nonatomic) IBOutlet UIView *BG6;
+@property (weak, nonatomic) IBOutlet UIView *BG7;
+@property (weak, nonatomic) IBOutlet UIView *BG8;
 
 // ACTIONS
 - (IBAction)back:(id)sender;

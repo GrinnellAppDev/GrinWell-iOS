@@ -15,5 +15,6 @@
 
 // ACTIONS
 - (IBAction)back:(id)sender;
+- (IBAction)dismiss:(id)sender;
 
 @end

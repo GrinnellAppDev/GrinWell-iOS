@@ -49,18 +49,13 @@
 
 - (IBAction)logout:(id)sender {
     
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    NSLog(@"WE ARE DOING STUFF.");
     [PFUser logOut];
-    // Load back the main. There might be the instance that it isn't there? Or should it always be there? Perhaps?
-    [self.presentingViewController dismissViewControllerAnimated:NO completion:^{
-        PFInstallation *installation = [PFInstallation currentInstallation];
-        installation[@"owner"] = [NSNull null];
-        [installation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
-                NSLog(@"Installation from logout saved");
-            } else {
-                NSLog(@"Not saved: %@", [error localizedDescription]);
-            }
-        }];
-    }];
+    
+    UIStoryboard *initialStoryboard = [UIStoryboard storyboardWithName:@"SignUp" bundle:nil];
+    UIViewController *slideViewController = [initialStoryboard instantiateInitialViewController];
+    [self presentViewController:slideViewController animated:NO completion:nil];
 }
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E6E26FE0B8C485288D0C7AD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2A73E19A0441D58BB6ADF5 /* libPods.a */; };
+		6721914D19CF9ED000F0AEAE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6721914C19CF9ED000F0AEAE /* Crashlytics.framework */; };
 		6770B47E19CE2C1500B5EBFE /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B47D19CE2C1500B5EBFE /* MenuViewController.m */; };
 		6770B48119CE30F500B5EBFE /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B48019CE30F500B5EBFE /* NotificationsViewController.m */; };
 		6770B48F19CE647400B5EBFE /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6770B48E19CE647400B5EBFE /* Accounts.framework */; };
@@ -22,6 +23,7 @@
 		6770B4D119CE98E800B5EBFE /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B4D019CE98E800B5EBFE /* Tweet.m */; };
 		6770B4D419CEAC6200B5EBFE /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B4D319CEAC6200B5EBFE /* AboutViewController.m */; };
 		6770B4D719CEAC6C00B5EBFE /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B4D619CEAC6C00B5EBFE /* GuideViewController.m */; };
+		6770B4DB19CF0BB200B5EBFE /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6770B4DA19CF0BB200B5EBFE /* SignUp.storyboard */; };
 		67B0C49319C294C600657D09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C49219C294C600657D09 /* Foundation.framework */; };
 		67B0C49519C294C600657D09 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C49419C294C600657D09 /* CoreGraphics.framework */; };
 		67B0C49719C294C600657D09 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C49619C294C600657D09 /* UIKit.framework */; };
@@ -66,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		5D2A73E19A0441D58BB6ADF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6721914C19CF9ED000F0AEAE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		6770B47C19CE2C1500B5EBFE /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		6770B47D19CE2C1500B5EBFE /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		6770B47F19CE30F500B5EBFE /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 		6770B4D319CEAC6200B5EBFE /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		6770B4D519CEAC6C00B5EBFE /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
 		6770B4D619CEAC6C00B5EBFE /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
+		6770B4DA19CF0BB200B5EBFE /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		67B0C48F19C294C600657D09 /* GrinFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrinFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67B0C49219C294C600657D09 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		67B0C49419C294C600657D09 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -137,21 +141,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67B0C4D219C2969600657D09 /* QuartzCore.framework in Frameworks */,
+				67B0C49519C294C600657D09 /* CoreGraphics.framework in Frameworks */,
+				67B0C49719C294C600657D09 /* UIKit.framework in Frameworks */,
+				67B0C49319C294C600657D09 /* Foundation.framework in Frameworks */,
 				6770B49319CE647F00B5EBFE /* Twitter.framework in Frameworks */,
 				6770B49119CE647A00B5EBFE /* Social.framework in Frameworks */,
 				6770B48F19CE647400B5EBFE /* Accounts.framework in Frameworks */,
 				67B0C4D819C296A600657D09 /* SystemConfiguration.framework in Frameworks */,
+				6721914D19CF9ED000F0AEAE /* Crashlytics.framework in Frameworks */,
 				67B0C4D619C2969F00657D09 /* StoreKit.framework in Frameworks */,
 				67B0C4D419C2969B00657D09 /* Security.framework in Frameworks */,
-				67B0C4D219C2969600657D09 /* QuartzCore.framework in Frameworks */,
 				67B0C4D019C2969000657D09 /* MobileCoreServices.framework in Frameworks */,
 				67B0C4CE19C2968B00657D09 /* libz.dylib in Frameworks */,
 				67B0C4CC19C2968400657D09 /* CoreLocation.framework in Frameworks */,
 				67B0C4CA19C2967E00657D09 /* CFNetwork.framework in Frameworks */,
 				67B0C4C819C2967900657D09 /* AudioToolbox.framework in Frameworks */,
-				67B0C49519C294C600657D09 /* CoreGraphics.framework in Frameworks */,
-				67B0C49719C294C600657D09 /* UIKit.framework in Frameworks */,
-				67B0C49319C294C600657D09 /* Foundation.framework in Frameworks */,
 				3E6E26FE0B8C485288D0C7AD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,9 +193,10 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		6770B49519CE6B8800B5EBFE /* Views */ = {
+		6770B49519CE6B8800B5EBFE /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				67B0C4A419C294C600657D09 /* Main.storyboard */,
 				6770B47F19CE30F500B5EBFE /* NotificationsViewController.h */,
 				6770B48019CE30F500B5EBFE /* NotificationsViewController.m */,
 				6770B47C19CE2C1500B5EBFE /* MenuViewController.h */,
@@ -207,16 +213,12 @@
 				67B0C52B19C29E3D00657D09 /* DietViewController.m */,
 				67B0C52119C29D6F00657D09 /* MainViewController.h */,
 				67B0C52219C29D6F00657D09 /* MainViewController.m */,
-				67B0C4DD19C2980100657D09 /* InitialViewController.h */,
-				67B0C4DE19C2980100657D09 /* InitialViewController.m */,
-				67B0C4DA19C297E100657D09 /* SignUpViewController.h */,
-				67B0C4DB19C297E100657D09 /* SignUpViewController.m */,
 				6770B4D219CEAC6200B5EBFE /* AboutViewController.h */,
 				6770B4D319CEAC6200B5EBFE /* AboutViewController.m */,
 				6770B4D519CEAC6C00B5EBFE /* GuideViewController.h */,
 				6770B4D619CEAC6C00B5EBFE /* GuideViewController.m */,
 			);
-			name = Views;
+			name = MainFlow;
 			sourceTree = "<group>";
 		};
 		6770B49919CE8F0F00B5EBFE /* KILabel-master */ = {
@@ -248,6 +250,18 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		6770B4DC19CF0BC400B5EBFE /* SignUpFlow */ = {
+			isa = PBXGroup;
+			children = (
+				6770B4DA19CF0BB200B5EBFE /* SignUp.storyboard */,
+				67B0C4DD19C2980100657D09 /* InitialViewController.h */,
+				67B0C4DE19C2980100657D09 /* InitialViewController.m */,
+				67B0C4DA19C297E100657D09 /* SignUpViewController.h */,
+				67B0C4DB19C297E100657D09 /* SignUpViewController.m */,
+			);
+			name = SignUpFlow;
+			sourceTree = "<group>";
+		};
 		67B0C48619C294C600657D09 = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +285,7 @@
 		67B0C49119C294C600657D09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6721914C19CF9ED000F0AEAE /* Crashlytics.framework */,
 				6770B49219CE647F00B5EBFE /* Twitter.framework */,
 				6770B49019CE647A00B5EBFE /* Social.framework */,
 				6770B48E19CE647400B5EBFE /* Accounts.framework */,
@@ -295,12 +310,12 @@
 		67B0C49819C294C600657D09 /* GrinFit */ = {
 			isa = PBXGroup;
 			children = (
-				6770B49519CE6B8800B5EBFE /* Views */,
+				6770B4DC19CF0BC400B5EBFE /* SignUpFlow */,
+				6770B49519CE6B8800B5EBFE /* MainFlow */,
 				6770B49419CE6B8100B5EBFE /* Models */,
 				6770B48219CE544D00B5EBFE /* Vendor */,
 				67B0C4A119C294C600657D09 /* AppDelegate.h */,
 				67B0C4A219C294C600657D09 /* AppDelegate.m */,
-				67B0C4A419C294C600657D09 /* Main.storyboard */,
 				67B0C4AA19C294C600657D09 /* Images.xcassets */,
 				67B0C49919C294C600657D09 /* Supporting Files */,
 			);
@@ -348,6 +363,7 @@
 				67B0C48C19C294C600657D09 /* Frameworks */,
 				67B0C48D19C294C600657D09 /* Resources */,
 				A1F76BCE062744E9AE04020E /* Copy Pods Resources */,
+				6721914B19CF9EB100F0AEAE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -417,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6770B4DB19CF0BB200B5EBFE /* SignUp.storyboard in Resources */,
 				6770B4C719CE8F1000B5EBFE /* LICENSE in Resources */,
 				6770B4BB19CE8F1000B5EBFE /* LICENSE in Resources */,
 				6770B4B919CE8F1000B5EBFE /* .gitignore in Resources */,
@@ -437,6 +454,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6721914B19CF9EB100F0AEAE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 45894d9e8a6bc3b8513651d6de36159e2c836e51 e63db966a2704d736a61d448865ca84d08aaaa601dce5b22725702038b26a699\n";
+		};
 		97AFCCF2FF4A440B8A73CAAC /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -619,6 +649,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrinFit/GrinFit-Prefix.pch";
 				INFOPLIST_FILE = "GrinFit/GrinFit-Info.plist";
@@ -636,6 +670,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrinFit/GrinFit-Prefix.pch";
 				INFOPLIST_FILE = "GrinFit/GrinFit-Info.plist";

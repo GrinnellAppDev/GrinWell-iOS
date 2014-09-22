@@ -11,6 +11,7 @@
 #import "GrinWellCell.h"
 #import "KILabel.h"
 #import "Tweet.h"
+#import "MZFormSheetController.h"
 
 @interface NotificationsViewController ()
 
@@ -24,6 +25,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    MZFormSheetController *controller = self.formSheetController;
+    
+    controller.formSheetWindow.transparentTouchEnabled = YES;
+    
+    controller.presentedFormSheetSize = CGSizeMake(300, 380);
     
 }
 
@@ -215,5 +223,31 @@
 - (IBAction)back:(id)sender {
         
     [[self navigationController] popViewControllerAnimated:YES];
+    //[self loadAndPresentVCNamed:@"MainViewController" fromStoryboardNamed:@"Main"];
+    
+}
+
+- (IBAction)dismiss:(id)sender {
+    MZFormSheetController *controller = self.formSheetController;
+    [controller mz_dismissFormSheetControllerAnimated:YES completionHandler:nil];
+}
+
+-(UIViewController*)loadAndPresentVCNamed:(NSString*)vcName
+                      fromStoryboardNamed:(NSString*)sbName;
+{
+    // 1. Get the storyboard
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:sbName bundle:nil];
+    
+    // 2. Edit the vcName if necessary (optional)
+    // If you don't have a separate items in your Storyboard w/ it's Storyboard ID
+    // set to "<vcName>_iPhone", remove the next 2 lines.
+    
+    // 3. Get the controller from the storyboard.
+    UIViewController *controller = (UIViewController *)
+    [storyboard instantiateViewControllerWithIdentifier:vcName];
+    
+    // 4. Present the vc and return it.
+    [self presentViewController:controller animated:YES completion:nil];
+    return controller;
 }
 @end
