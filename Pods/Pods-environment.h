@@ -18,12 +18,6 @@
 #define COCOAPODS_VERSION_MINOR_ECSlidingViewController 0
 #define COCOAPODS_VERSION_PATCH_ECSlidingViewController 3
 
-// Facebook-iOS-SDK
-#define COCOAPODS_POD_AVAILABLE_Facebook_iOS_SDK
-#define COCOAPODS_VERSION_MAJOR_Facebook_iOS_SDK 3
-#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK 18
-#define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK 0
-
 // MGConferenceDatePicker
 #define COCOAPODS_POD_AVAILABLE_MGConferenceDatePicker
 #define COCOAPODS_VERSION_MAJOR_MGConferenceDatePicker 0
@@ -57,7 +51,7 @@
 // Parse
 #define COCOAPODS_POD_AVAILABLE_Parse
 #define COCOAPODS_VERSION_MAJOR_Parse 1
-#define COCOAPODS_VERSION_MINOR_Parse 3
+#define COCOAPODS_VERSION_MINOR_Parse 4
 #define COCOAPODS_VERSION_PATCH_Parse 0
 
 // STTwitter

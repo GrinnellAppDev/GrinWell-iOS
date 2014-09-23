@@ -1,8 +1,6 @@
 PODS:
   - Bolts (1.1.2)
   - ECSlidingViewController (2.0.3)
-  - Facebook-iOS-SDK (3.18.0):
-    - Bolts
   - MGConferenceDatePicker (0.0.2)
   - MZAppearance (1.1.3)
   - MZFormSheetController (2.4.0):
@@ -10,8 +8,8 @@ PODS:
     - MZFormSheetController/Core
   - MZFormSheetController/Core (2.4.0):
     - MZAppearance (~> 1.1.3)
-  - Parse (1.3.0):
-    - Facebook-iOS-SDK (~> 3.17)
+  - Parse (1.4.0):
+    - Bolts (~> 1.1.2)
   - PNChart (0.5):
     - UICountingLabel (~> 1.0.0)
   - STTwitter (0.1.4)
@@ -30,11 +28,10 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Bolts: 2635e8698a630774689441047f3465d78c48d485
   ECSlidingViewController: e79fe856bfb1a99a39c995377a1943e50f7647eb
-  Facebook-iOS-SDK: fa12c51cc57bfb6f92e47793c9d4d2c65bc92741
   MGConferenceDatePicker: 5ee788228b8a8ff8883279eb02cb03dffe1e6047
   MZAppearance: c88502c0c2345120630c34e09d5ff09e2969ba30
   MZFormSheetController: ef613d931cede5bec66ccf744229a98c8b4188bf
-  Parse: 8ffeef385de83a6bef0c23cdf25f939635b53f5e
+  Parse: 217a57ed13e870a744fe746fcc01a3fef6a9b750
   PNChart: 0d0cf4531de3aa7f2b12434a54845d70d9c9cfe3
   STTwitter: 809f63f856341fdd103fbc6d9e4818d48a91be0c
   UICountingLabel: 0a0e9e34bf4690dbd127aaec552d19ed938087a9

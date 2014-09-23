@@ -71,7 +71,9 @@
     userDefaults = [NSUserDefaults standardUserDefaults];
     
     
-    if ([userDefaults integerForKey:@"sleepHours"] || [userDefaults integerForKey:@"sleepMinutes"]) {
+    if ([userDefaults integerForKey:@"sleepHours"]|| [userDefaults integerForKey:@"sleepMinutes"]) {
+        
+        
         self.fellAsleepField.enabled = NO;
         self.wokeUpField.enabled = NO;
         
@@ -273,10 +275,54 @@
         [userDefaults setInteger:totalMinutes forKey:@"sleepMinutes"];
         
         self.sleepTimeLabel.text = [NSString stringWithFormat:@"You slept for: %i hours and %i minutes!", totalHours, totalMinutes];
+        
+        PFQuery *dateQuery = [PFQuery queryWithClassName:@"Dates"];
+        [dateQuery whereKey:@"createdBy" equalTo:currentUser.objectId];
+        dateQuery.limit = 1;
+        [dateQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+            if (!error) {
+                
+                float sleep = (([userDefaults integerForKey:@"sleepHours"] * 60) + [userDefaults integerForKey:@"sleepMinutes"]) / 60;
+                
+                NSNumber *sleepNum = [NSNumber numberWithFloat:sleep];
+                
+                object[@"Sleep"] = sleepNum;
+                [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (error) {
+                        NSLog(@"wompwomp");
+                    }
+                    else {
+                        NSLog(@"SLEEP: Saved!");
+                    };
+                }];
+            }
+        }];
     }
     
     else {
         self.sleepTimeLabel.text = [NSString stringWithFormat:@"You slept for: %i hours and %i minutes!", [userDefaults integerForKey:@"sleepHours"], [userDefaults integerForKey:@"sleepMinutes"]];
+        
+        PFQuery *dateQuery = [PFQuery queryWithClassName:@"Dates"];
+        [dateQuery whereKey:@"createdBy" equalTo:currentUser.objectId];
+        dateQuery.limit = 1;
+        [dateQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+            if (!error) {
+                
+                float sleep = (([userDefaults integerForKey:@"sleepHours"] * 60) + [userDefaults integerForKey:@"sleepMinutes"]) / 60;
+                
+                NSNumber *sleepNum = [NSNumber numberWithFloat:sleep];
+                
+                object[@"Sleep"] = sleepNum;
+                [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (error) {
+                        NSLog(@"wompwomp");
+                    }
+                    else {
+                        NSLog(@"SLEEP: Saved!");
+                    };
+                }];
+            }
+        }];
     }
     
 }

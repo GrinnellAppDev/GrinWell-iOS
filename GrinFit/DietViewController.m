@@ -36,6 +36,8 @@
     
     userDefaults = [NSUserDefaults standardUserDefaults];
     
+    NSLog(@"There ARE things in veggies: %i or fruit: %i", [userDefaults integerForKey:@"veggiesToday"], [userDefaults integerForKey:@"fruitToday"]);
+    
     if (![userDefaults integerForKey:@"veggiesToday"] || ![userDefaults integerForKey:@"fruitToday"]) { // today's date
         NSLog(@"There are NOT things in veggies");
         [userDefaults setInteger:0 forKey:@"veggiesToday"];
@@ -87,6 +89,9 @@
 - (void) viewDidDisappear:(BOOL)animated {
     [userDefaults setInteger:veggies forKey:@"veggiesToday"];
     [userDefaults setInteger:fruit forKey:@"fruitToday"];
+    
+    NSLog(@"There ARE things in veggies BEFORE WE SAVE: %i or fruit: %i", [userDefaults integerForKey:@"veggiesToday"], [userDefaults integerForKey:@"fruitToday"]);
+    NSLog(@"There ARE things in veggies BEFORE WE SAVE: %i or fruit: %i", veggies, fruit);
     
     NSNumber *veggiesNFruits = [NSNumber numberWithInt:veggies + fruit];
     

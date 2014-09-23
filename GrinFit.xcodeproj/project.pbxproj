@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3E6E26FE0B8C485288D0C7AD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2A73E19A0441D58BB6ADF5 /* libPods.a */; };
 		6721914D19CF9ED000F0AEAE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6721914C19CF9ED000F0AEAE /* Crashlytics.framework */; };
+		6721915019D0C83300F0AEAE /* Main4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6721914E19D0C83300F0AEAE /* Main4.storyboard */; };
+		6721915219D0D0FD00F0AEAE /* SignUp4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6721915119D0D0FD00F0AEAE /* SignUp4.storyboard */; };
 		6770B47E19CE2C1500B5EBFE /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B47D19CE2C1500B5EBFE /* MenuViewController.m */; };
 		6770B48119CE30F500B5EBFE /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B48019CE30F500B5EBFE /* NotificationsViewController.m */; };
 		6770B48F19CE647400B5EBFE /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6770B48E19CE647400B5EBFE /* Accounts.framework */; };
@@ -69,6 +71,8 @@
 /* Begin PBXFileReference section */
 		5D2A73E19A0441D58BB6ADF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6721914C19CF9ED000F0AEAE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		6721914F19D0C83300F0AEAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main4.storyboard; sourceTree = "<group>"; };
+		6721915119D0D0FD00F0AEAE /* SignUp4.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp4.storyboard; sourceTree = "<group>"; };
 		6770B47C19CE2C1500B5EBFE /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		6770B47D19CE2C1500B5EBFE /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		6770B47F19CE30F500B5EBFE /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 		6770B49519CE6B8800B5EBFE /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				6721914E19D0C83300F0AEAE /* Main4.storyboard */,
 				67B0C4A419C294C600657D09 /* Main.storyboard */,
 				6770B47F19CE30F500B5EBFE /* NotificationsViewController.h */,
 				6770B48019CE30F500B5EBFE /* NotificationsViewController.m */,
@@ -253,6 +258,7 @@
 		6770B4DC19CF0BC400B5EBFE /* SignUpFlow */ = {
 			isa = PBXGroup;
 			children = (
+				6721915119D0D0FD00F0AEAE /* SignUp4.storyboard */,
 				6770B4DA19CF0BB200B5EBFE /* SignUp.storyboard */,
 				67B0C4DD19C2980100657D09 /* InitialViewController.h */,
 				67B0C4DE19C2980100657D09 /* InitialViewController.m */,
@@ -436,6 +442,8 @@
 				6770B4DB19CF0BB200B5EBFE /* SignUp.storyboard in Resources */,
 				6770B4C719CE8F1000B5EBFE /* LICENSE in Resources */,
 				6770B4BB19CE8F1000B5EBFE /* LICENSE in Resources */,
+				6721915019D0C83300F0AEAE /* Main4.storyboard in Resources */,
+				6721915219D0D0FD00F0AEAE /* SignUp4.storyboard in Resources */,
 				6770B4B919CE8F1000B5EBFE /* .gitignore in Resources */,
 				67B0C4AB19C294C600657D09 /* Images.xcassets in Resources */,
 				67B0C49D19C294C600657D09 /* InfoPlist.strings in Resources */,
@@ -544,6 +552,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6721914E19D0C83300F0AEAE /* Main4.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6721914F19D0C83300F0AEAE /* Base */,
+			);
+			name = Main4.storyboard;
+			sourceTree = "<group>";
+		};
 		67B0C49B19C294C600657D09 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -647,7 +663,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Grinnell AppDev (TGDK2NF7Q9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -656,8 +672,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrinFit/GrinFit-Prefix.pch";
 				INFOPLIST_FILE = "GrinFit/GrinFit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "0b84d130-086c-4fd3-aa93-7aa98e7c9599";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -668,7 +685,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Grinnell AppDev (TGDK2NF7Q9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -677,8 +694,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrinFit/GrinFit-Prefix.pch";
 				INFOPLIST_FILE = "GrinFit/GrinFit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "0b84d130-086c-4fd3-aa93-7aa98e7c9599";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

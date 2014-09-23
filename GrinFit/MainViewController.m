@@ -37,6 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     currentUser = [PFUser currentUser];
     
@@ -74,8 +75,6 @@
     // parse object
     // CREATE THE STATS OBJECT
     
-    [self newDayStats];
-    
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -91,6 +90,7 @@
     [super viewWillAppear:YES];
     [self circularizeButtons];
     [self changeBtns];
+    [self newDayStats];
     [self updateKingtonsStats];
 }
 
@@ -153,6 +153,7 @@
             self.restoreCrown.hidden = NO;
         }
     }
+
 }
 
 - (void) newDayStats {
@@ -170,12 +171,15 @@
     NSLog(@"What is the current date? %@", thisDay);
     
     if ([self compareDate:lastDate[@"Date"] toDate:thisDay] == 1) {
+        
+        NSLog(@"last date: %@ toDate: %@", lastDate[@"Date"], thisDay);
         statsToday = lastDate;
         NSLog(@"I AM NOT CREATING A NEW DATE!");
     }
     
     else {
         NSLog(@"I AM CREATING A NEW DATE...");
+        //[NSUserDefaults resetStandardUserDefaults];
     
         statsToday[@"createdBy"] = currentUser.objectId;
         statsToday[@"Date"] = thisDay;
@@ -185,7 +189,7 @@
         NSNumber *fruitNVeggies = [NSNumber numberWithInt:veggies + fruit];
         statsToday[@"FruitsAndVegetables"] = fruitNVeggies;
     
-        float sleep = (([userDefaults integerForKey:@"sleepHours"] * 60) + [userDefaults integerForKey:@"sleepMinutes"]) / 60;
+        sleep = (([userDefaults integerForKey:@"sleepHours"] * 60) + [userDefaults integerForKey:@"sleepMinutes"]) / 60;
     
         NSNumber *sleepNum = [NSNumber numberWithFloat:sleep];
         statsToday[@"Sleep"] = sleepNum;
