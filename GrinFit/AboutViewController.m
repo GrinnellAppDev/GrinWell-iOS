@@ -2,7 +2,7 @@
 //  AboutViewController.m
 //  GrinFit
 //
-//  Created by Lea Marolt on 9/21/14.
+//  Created by Lea Marolt on 9/23/14.
 //  Copyright (c) 2014 Grinnell AppDev. All rights reserved.
 //
 
@@ -18,7 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self configureECSlidingController];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,16 +34,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-#pragma mark - ECSLIDING
-
-- (void)configureECSlidingController {
-    // setup swipe and button gestures for the sliding view controller
-    //self.slidingViewController.topViewControllerStoryboardId = @"AboutViewController";
-    self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
-    self.slidingViewController.customAnchoredGestures = @[];
-    
-    // TO DO: Swipe to the right to reveal menu
-}
 
 @end

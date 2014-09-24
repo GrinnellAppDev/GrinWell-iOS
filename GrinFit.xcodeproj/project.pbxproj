@@ -11,6 +11,8 @@
 		6721914D19CF9ED000F0AEAE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6721914C19CF9ED000F0AEAE /* Crashlytics.framework */; };
 		6721915019D0C83300F0AEAE /* Main4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6721914E19D0C83300F0AEAE /* Main4.storyboard */; };
 		6721915219D0D0FD00F0AEAE /* SignUp4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6721915119D0D0FD00F0AEAE /* SignUp4.storyboard */; };
+		6721915519D20BF800F0AEAE /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721915419D20BF800F0AEAE /* AboutViewController.m */; };
+		6721915819D20C4200F0AEAE /* AboutAppDevViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721915719D20C4200F0AEAE /* AboutAppDevViewController.m */; };
 		6770B47E19CE2C1500B5EBFE /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B47D19CE2C1500B5EBFE /* MenuViewController.m */; };
 		6770B48119CE30F500B5EBFE /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B48019CE30F500B5EBFE /* NotificationsViewController.m */; };
 		6770B48F19CE647400B5EBFE /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6770B48E19CE647400B5EBFE /* Accounts.framework */; };
@@ -23,7 +25,6 @@
 		6770B4C719CE8F1000B5EBFE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6770B4B719CE8F1000B5EBFE /* LICENSE */; };
 		6770B4C819CE8F1000B5EBFE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 6770B4B819CE8F1000B5EBFE /* README.md */; };
 		6770B4D119CE98E800B5EBFE /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B4D019CE98E800B5EBFE /* Tweet.m */; };
-		6770B4D419CEAC6200B5EBFE /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B4D319CEAC6200B5EBFE /* AboutViewController.m */; };
 		6770B4D719CEAC6C00B5EBFE /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6770B4D619CEAC6C00B5EBFE /* GuideViewController.m */; };
 		6770B4DB19CF0BB200B5EBFE /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6770B4DA19CF0BB200B5EBFE /* SignUp.storyboard */; };
 		67B0C49319C294C600657D09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C49219C294C600657D09 /* Foundation.framework */; };
@@ -48,7 +49,6 @@
 		67B0C4D419C2969B00657D09 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C4D319C2969B00657D09 /* Security.framework */; };
 		67B0C4D619C2969F00657D09 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C4D519C2969F00657D09 /* StoreKit.framework */; };
 		67B0C4D819C296A600657D09 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B0C4D719C296A600657D09 /* SystemConfiguration.framework */; };
-		67B0C4DC19C297E100657D09 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C4DB19C297E100657D09 /* SignUpViewController.m */; };
 		67B0C4DF19C2980100657D09 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C4DE19C2980100657D09 /* InitialViewController.m */; };
 		67B0C52319C29D6F00657D09 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C52219C29D6F00657D09 /* MainViewController.m */; };
 		67B0C52619C29E2600657D09 /* ExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C52519C29E2600657D09 /* ExerciseViewController.m */; };
@@ -73,6 +73,10 @@
 		6721914C19CF9ED000F0AEAE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		6721914F19D0C83300F0AEAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main4.storyboard; sourceTree = "<group>"; };
 		6721915119D0D0FD00F0AEAE /* SignUp4.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp4.storyboard; sourceTree = "<group>"; };
+		6721915319D20BF800F0AEAE /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		6721915419D20BF800F0AEAE /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		6721915619D20C4200F0AEAE /* AboutAppDevViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutAppDevViewController.h; path = ../AboutAppDevViewController.h; sourceTree = "<group>"; };
+		6721915719D20C4200F0AEAE /* AboutAppDevViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutAppDevViewController.m; path = ../AboutAppDevViewController.m; sourceTree = "<group>"; };
 		6770B47C19CE2C1500B5EBFE /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		6770B47D19CE2C1500B5EBFE /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		6770B47F19CE30F500B5EBFE /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
@@ -90,8 +94,6 @@
 		6770B4B819CE8F1000B5EBFE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6770B4CF19CE98E800B5EBFE /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
 		6770B4D019CE98E800B5EBFE /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
-		6770B4D219CEAC6200B5EBFE /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		6770B4D319CEAC6200B5EBFE /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		6770B4D519CEAC6C00B5EBFE /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
 		6770B4D619CEAC6C00B5EBFE /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		6770B4DA19CF0BB200B5EBFE /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
@@ -121,8 +123,6 @@
 		67B0C4D319C2969B00657D09 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		67B0C4D519C2969F00657D09 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		67B0C4D719C296A600657D09 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		67B0C4DA19C297E100657D09 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
-		67B0C4DB19C297E100657D09 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		67B0C4DD19C2980100657D09 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
 		67B0C4DE19C2980100657D09 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		67B0C52119C29D6F00657D09 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -200,6 +200,8 @@
 		6770B49519CE6B8800B5EBFE /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				6721915619D20C4200F0AEAE /* AboutAppDevViewController.h */,
+				6721915719D20C4200F0AEAE /* AboutAppDevViewController.m */,
 				6721914E19D0C83300F0AEAE /* Main4.storyboard */,
 				67B0C4A419C294C600657D09 /* Main.storyboard */,
 				6770B47F19CE30F500B5EBFE /* NotificationsViewController.h */,
@@ -218,10 +220,10 @@
 				67B0C52B19C29E3D00657D09 /* DietViewController.m */,
 				67B0C52119C29D6F00657D09 /* MainViewController.h */,
 				67B0C52219C29D6F00657D09 /* MainViewController.m */,
-				6770B4D219CEAC6200B5EBFE /* AboutViewController.h */,
-				6770B4D319CEAC6200B5EBFE /* AboutViewController.m */,
 				6770B4D519CEAC6C00B5EBFE /* GuideViewController.h */,
 				6770B4D619CEAC6C00B5EBFE /* GuideViewController.m */,
+				6721915319D20BF800F0AEAE /* AboutViewController.h */,
+				6721915419D20BF800F0AEAE /* AboutViewController.m */,
 			);
 			name = MainFlow;
 			sourceTree = "<group>";
@@ -262,8 +264,6 @@
 				6770B4DA19CF0BB200B5EBFE /* SignUp.storyboard */,
 				67B0C4DD19C2980100657D09 /* InitialViewController.h */,
 				67B0C4DE19C2980100657D09 /* InitialViewController.m */,
-				67B0C4DA19C297E100657D09 /* SignUpViewController.h */,
-				67B0C4DB19C297E100657D09 /* SignUpViewController.m */,
 			);
 			name = SignUpFlow;
 			sourceTree = "<group>";
@@ -514,15 +514,15 @@
 			files = (
 				67B0C52619C29E2600657D09 /* ExerciseViewController.m in Sources */,
 				67B0C4A319C294C600657D09 /* AppDelegate.m in Sources */,
+				6721915819D20C4200F0AEAE /* AboutAppDevViewController.m in Sources */,
 				6770B4BC19CE8F1000B5EBFE /* KILabel.m in Sources */,
-				67B0C4DC19C297E100657D09 /* SignUpViewController.m in Sources */,
 				67F39F0019C49E5D00E47A95 /* StatsViewController.m in Sources */,
 				67F39EFD19C49E3400E47A95 /* RestoreViewController.m in Sources */,
 				6770B48119CE30F500B5EBFE /* NotificationsViewController.m in Sources */,
 				67B0C49F19C294C600657D09 /* main.m in Sources */,
 				67B0C52C19C29E3D00657D09 /* DietViewController.m in Sources */,
-				6770B4D419CEAC6200B5EBFE /* AboutViewController.m in Sources */,
 				67B0C52319C29D6F00657D09 /* MainViewController.m in Sources */,
+				6721915519D20BF800F0AEAE /* AboutViewController.m in Sources */,
 				6770B4C819CE8F1000B5EBFE /* README.md in Sources */,
 				6770B4D119CE98E800B5EBFE /* Tweet.m in Sources */,
 				67B0C52919C29E3200657D09 /* SleepViewController.m in Sources */,
@@ -664,7 +664,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Grinnell AppDev (TGDK2NF7Q9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Grinnell AppDev (TGDK2NF7Q9)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -672,9 +672,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrinFit/GrinFit-Prefix.pch";
 				INFOPLIST_FILE = "GrinFit/GrinFit-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0b84d130-086c-4fd3-aa93-7aa98e7c9599";
+				PROVISIONING_PROFILE = "3c45b5f4-1178-458a-afa8-1db98207b440";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -686,7 +686,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Grinnell AppDev (TGDK2NF7Q9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Grinnell AppDev (TGDK2NF7Q9)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -694,9 +694,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrinFit/GrinFit-Prefix.pch";
 				INFOPLIST_FILE = "GrinFit/GrinFit-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0b84d130-086c-4fd3-aa93-7aa98e7c9599";
+				PROVISIONING_PROFILE = "3c45b5f4-1178-458a-afa8-1db98207b440";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

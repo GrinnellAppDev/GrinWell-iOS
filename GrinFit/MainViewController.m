@@ -81,17 +81,15 @@
     [super viewDidAppear:YES];
 
     [self.navigationItem setHidesBackButton:YES];
-    [self changeBtns];
-    [self updateKingtonsStats];
     
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     [self circularizeButtons];
-    [self changeBtns];
     [self newDayStats];
     [self updateKingtonsStats];
+    [self changeBtns];
 }
 
 - (void) viewDidLayoutSubviews {
@@ -180,6 +178,10 @@
     else {
         NSLog(@"I AM CREATING A NEW DATE...");
         //[NSUserDefaults resetStandardUserDefaults];
+        
+        // reset user defaults
+        NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+        [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     
         statsToday[@"createdBy"] = currentUser.objectId;
         statsToday[@"Date"] = thisDay;

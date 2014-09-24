@@ -103,6 +103,42 @@
     return NO;
 }
 
+- (IBAction)signUp:(id)sender {
+    
+    [self saveData];
+    
+    if ([password length] == 0 || [username length] == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Looks like you didn't enter information for all the fields." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }
+    else {
+        PFUser *newUser = [PFUser user];
+        newUser.username = username;
+        newUser.password = password;
+        newUser.email = username;
+        
+        PFACL *publicACL = [PFACL ACL];
+        [publicACL setPublicReadAccess:YES];
+        newUser.ACL = publicACL;
+        
+        // IF WE NEED OTHER THINGS FOR THE OBJECT LIKE AGE/GENDER OR W/E
+        // newUser[@"name"] = name;
+        
+        [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (error) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry." message:[error.userInfo objectForKey:@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                
+                [alert show];
+            }
+            else {
+                
+                [self showMainScreen];
+            }
+            
+        }];
+    }
+}
+
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
 

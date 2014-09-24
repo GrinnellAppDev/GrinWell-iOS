@@ -17,6 +17,8 @@
 
 @implementation StatsViewController {
     PFUser *currentUser;
+    NSUserDefaults *userDefaults;
+    UIStoryboard *userStoryboard;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -44,9 +46,13 @@
     [self configureECSlidingController];
 
     [self chartMyStats];
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
+    userDefaults = [NSUserDefaults standardUserDefaults];
+    userStoryboard = [self grabStoryboard];
+    [self changeLabels];
 
 }
 
@@ -87,7 +93,16 @@
     //For LineChart
     
     // YOUR LINE CHART
-    PNLineChart * lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(-30, 135.0, 380, 180.0)];
+    
+    PNLineChart *lineChart;
+    
+    if (userStoryboard == [UIStoryboard storyboardWithName:@"Main4" bundle:nil]) {
+        lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(-30, 175.0, 380, 105.0)];
+    }
+    else {
+        lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(-30, 165.0, 380, 145.0)];
+    }
+    
     [lineChart setXLabels:@[@"SEP 1",@"SEP 2",@"SEP 3",@"SEP 4",@"SEP 5"]];
     
     // MOVE
@@ -139,7 +154,16 @@
     [self.view addSubview:lineChart];
     
     // KINGTON LINE CHART
-    PNLineChart * lineChartRK = [[PNLineChart alloc] initWithFrame:CGRectMake(-30, 370.0, 380, 180.0)];
+    
+    PNLineChart *lineChartRK;
+    
+    if (userStoryboard == [UIStoryboard storyboardWithName:@"Main4" bundle:nil]) {
+        lineChartRK = [[PNLineChart alloc] initWithFrame:CGRectMake(-30, 375.0, 380, 105.0)];
+    }
+    else {
+        lineChartRK = [[PNLineChart alloc] initWithFrame:CGRectMake(-30, 410.0, 380, 145.0)];
+    }
+    
     [lineChartRK setXLabels:@[@"SEP 1",@"SEP 2",@"SEP 3",@"SEP 4",@"SEP 5"]];
     
     // MOVE
@@ -192,12 +216,12 @@
     [self.view addSubview:lineChartRK];
     
     UIColor *bgColor = [UIColor colorWithRed:84.0/255.0 green:84.0/255.0 blue:84.0/255.0 alpha:1.0];
-    
-    CGRect maskBounds1 = CGRectMake(-30.0, 135.0, 30, 180);
+
+    CGRect maskBounds1 = CGRectMake(-30.0, 155.0, 30, 180);
     UIView *maskLine1 = [[UIView alloc] initWithFrame:maskBounds1];
     maskLine1.backgroundColor = bgColor;
     
-    CGRect maskBounds2 = CGRectMake(-30.0, 370.0, 30, 180);
+    CGRect maskBounds2 = CGRectMake(-30.0, 410.0, 30, 180);
     UIView *maskLine2 = [[UIView alloc] initWithFrame:maskBounds2];
     maskLine2.backgroundColor = bgColor;
     
@@ -213,4 +237,82 @@
 -(void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex{
     NSLog(@"Click on line %f, %f, line index is %d",point.x, point.y, (int)lineIndex);
 }
+
+- (void) circularizeButtons {
+    self.eat.layer.cornerRadius = 20;
+    self.eat.layer.masksToBounds = YES;
+    
+    self.move.layer.cornerRadius = 20;
+    self.move.layer.masksToBounds = YES;
+    
+    self.restore.layer.cornerRadius = 20;
+    self.restore.layer.masksToBounds = YES;
+    
+    self.sleep.layer.cornerRadius = 20;
+    self.sleep.layer.masksToBounds = YES;
+    
+    self.eatRK.layer.cornerRadius = 20;
+    self.eatRK.layer.masksToBounds = YES;
+    
+    self.moveRK.layer.cornerRadius = 20;
+    self.moveRK.layer.masksToBounds = YES;
+    
+    self.restoreRK.layer.cornerRadius = 20;
+    self.restoreRK.layer.masksToBounds = YES;
+    
+    self.sleepRK.layer.cornerRadius = 20;
+    self.sleepRK.layer.masksToBounds = YES;
+    
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
+- (void) changeLabels {
+    
+    // do whatever needs to be done to the buttons to indicate that the challenge has been completed!
+    
+    self.move.text = [NSString stringWithFormat:@"%i/30min", [userDefaults integerForKey:@"dailyMovement"]];
+    self.eat.text = [NSString stringWithFormat:@"%i/5", ([userDefaults integerForKey:@"veggiesToday"] + [userDefaults integerForKey:@"fruitToday"])];
+    self.sleep.text = [NSString stringWithFormat:@"%i/8hr", (([userDefaults integerForKey:@"sleepHours"] * 60) + [userDefaults integerForKey:@"sleepMinutes"])];
+    
+    if ([userDefaults boolForKey:@"selectedSet"]) {
+        self.restore.text = @"Complete!";
+    }
+    
+    PFObject *kington = [PFObject objectWithClassName:@"Dates"];
+    PFQuery *kingtonQuery = [PFQuery queryWithClassName:@"Dates"];
+    [kingtonQuery whereKey:@"createdBy" equalTo:@"EvFCcNYqRu"];
+    kington = [kingtonQuery getFirstObject];
+    
+    NSLog(@"kington object: %@", kington);
+    
+    if (kington) {
+        self.moveRK.text = [NSString stringWithFormat:@"%@/30min", kington[@"MovementAmount"]];
+        self.eatRK.text = [NSString stringWithFormat:@"%@/5", kington[@"FruitsAndVegetables"]];
+        self.sleepRK.text = [NSString stringWithFormat:@"%@/8hrs", kington[@"Sleep"]];
+        if ([kington[@"WellnessActivity"] boolValue]) {
+            self.restoreRK.text = @"Complete";
+        }
+    }
+    
+}
+
+- (UIStoryboard *)grabStoryboard {
+    
+    UIStoryboard *storyboard;
+    
+    // detect the height of our screen
+    int height = [UIScreen mainScreen].bounds.size.height;
+    
+    if (height == 480) {
+        storyboard = [UIStoryboard storyboardWithName:@"Main4" bundle:nil];
+        // NSLog(@"Device has a 3.5inch Display.");
+    } else {
+        storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        // NSLog(@"Device has a 4inch Display.");
+    }
+    
+    return storyboard;
+}
+
+
 @end
