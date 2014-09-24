@@ -119,7 +119,7 @@
         currentBtn.titleLabel.textColor = textColorSet[selectedNum];
         [BGArray[selectedNum] setBackgroundColor:colorSet[selectedNum]];
         
-        [(UIButton*)btnArray[selectedNum] setEnabled:NO];
+        //[(UIButton*)btnArray[selectedNum] setEnabled:NO];
     }
 
     //self.succeededLabel.text = @"YAY";

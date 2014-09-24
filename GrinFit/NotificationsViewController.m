@@ -100,7 +100,7 @@
         [twitter verifyCredentialsWithSuccessBlock:^(NSString *username)
          
          {
-             [twitter getSearchTweetsWithQuery:@"GrinWell"
+             [twitter getSearchTweetsWithQuery:@"#GrinWell"
                             successBlock:^(NSDictionary *searchMetadata, NSArray *statuses) {
                                 
                                 NSLog(@"search metadata: %@ & STATUSES: %@", searchMetadata, statuses);

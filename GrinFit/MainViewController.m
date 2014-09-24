@@ -81,7 +81,7 @@
     [super viewDidAppear:YES];
 
     [self.navigationItem setHidesBackButton:YES];
-    
+    [self changeBtns];
 }
 
 - (void) viewWillAppear:(BOOL)animated {

@@ -190,6 +190,9 @@
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     NSString *rowString = [NSString stringWithFormat:@"%@", pickerData[component][row]];
+    if ([rowString length] == 1) {
+        rowString = [NSString stringWithFormat:@"0%@", rowString];
+    }
     return rowString;
 }
 
@@ -210,12 +213,18 @@
 // Catpure the picker view selection
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    NSNumber *hour = pickerData[0][[self.hourPicker selectedRowInComponent:0]];
-    NSNumber *minute = pickerData[1][[self.hourPicker selectedRowInComponent:1]];
+    NSString *hour = [NSString stringWithFormat:@"%@", pickerData[0][[self.hourPicker selectedRowInComponent:0]]];
+    NSString *minute = [NSString stringWithFormat:@"%@", pickerData[1][[self.hourPicker selectedRowInComponent:1]]];
     NSString *timeOfDay = pickerData[2][[self.hourPicker selectedRowInComponent:2]];
     
     
     if (sleepSelected) {
+        if ([hour length] == 1) {
+            hour = [NSString stringWithFormat:@"0%@", hour];
+        }
+        if ([minute length] == 1) {
+            minute = [NSString stringWithFormat:@"0%@", minute];
+        }
         self.fellAsleepField.text = [NSString stringWithFormat:@"%@:%@ %@", hour, minute, timeOfDay];
         fellAsleepText = [NSString stringWithFormat:@"%@:%@ %@", hour, minute, timeOfDay];
         
@@ -247,6 +256,7 @@
         wakeMinutes = [minute intValue];
         
         [userDefaults setObject:wokeUpText forKey:@"wokeUpString"];
+        
         [self updateLabel];
         
     }
