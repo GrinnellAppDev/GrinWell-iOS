@@ -55,7 +55,7 @@
 
 - (IBAction)rateOurApp:(id)sender {
     
-    NSDictionary *parameters = [NSDictionary dictionaryWithObject:@"638912711" forKey:SKStoreProductParameterITunesItemIdentifier];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObject:@"921395710" forKey:SKStoreProductParameterITunesItemIdentifier];
     SKStoreProductViewController *productViewController = [[SKStoreProductViewController alloc] init];
     productViewController.delegate = self;
     [productViewController loadProductWithParameters:parameters completionBlock:nil];

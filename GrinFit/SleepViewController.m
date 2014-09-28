@@ -8,6 +8,7 @@
 
 #import "SleepViewController.h"
 #import <Parse/Parse.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface SleepViewController ()
 
@@ -217,6 +218,9 @@
     NSString *minute = [NSString stringWithFormat:@"%@", pickerData[1][[self.hourPicker selectedRowInComponent:1]]];
     NSString *timeOfDay = pickerData[2][[self.hourPicker selectedRowInComponent:2]];
     
+    NSNumber *minuteNumber = pickerData[1][[self.hourPicker selectedRowInComponent:1]];
+    NSNumber *hourNumber = pickerData[1][[self.hourPicker selectedRowInComponent:0]];
+    
     
     if (sleepSelected) {
         if ([hour length] == 1) {
@@ -231,29 +235,36 @@
         NSLog(@"UP - Fell asleep text: %@", fellAsleepText);
         
         if ([timeOfDay isEqual:@"PM"]) {
-            militaryTimeSleepHour = [hour intValue] + 12;
+            militaryTimeSleepHour = [hourNumber intValue] + 12;
         }
         else {
-            militaryTimeSleepHour = [hour intValue];
+            militaryTimeSleepHour = [hourNumber intValue];
         }
         
         sleepMinutes = [minute intValue];
         [userDefaults setObject:fellAsleepText forKey:@"fellAsleepString"];
     }
     else {
+        if ([hour length] == 1) {
+            hour = [NSString stringWithFormat:@"0%@", hour];
+        }
+        if ([minute length] == 1) {
+            minute = [NSString stringWithFormat:@"0%@", minute];
+        }
+        
         self.wokeUpField.text = [NSString stringWithFormat:@"%@:%@ %@", hour, minute, timeOfDay];
         wokeUpText = [NSString stringWithFormat:@"%@:%@ %@", hour, minute, timeOfDay];
         
         NSLog(@"UP - Woke up text: %@", wokeUpText);
         
         if ([timeOfDay isEqual:@"PM"]) {
-            militaryTimeWakeHour = [hour intValue] + 12;
+            militaryTimeWakeHour = [hourNumber intValue] + 12;
         }
         else {
-            militaryTimeWakeHour = [hour intValue];
+            militaryTimeWakeHour = [hourNumber intValue];
         }
         
-        wakeMinutes = [minute intValue];
+        wakeMinutes = [minuteNumber intValue];
         
         [userDefaults setObject:wokeUpText forKey:@"wokeUpString"];
         
@@ -261,6 +272,8 @@
         
     }
     
+    NSLog(@"Woke up string: %@ and fell asleep string: %@", [userDefaults objectForKey:@"wokeUpString"], [userDefaults objectForKey:@"fellAsleepString"]);
+    NSLog(@"BLA\nBLA\nBLA\nBLA\nBLA\nBLA\nBLA\nBLA\n");
 }
 
 - (void) updateLabel {
@@ -334,6 +347,7 @@
             }
         }];
     }
+    
     
 }
 

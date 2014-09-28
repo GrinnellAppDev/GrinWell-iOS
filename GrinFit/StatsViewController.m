@@ -19,6 +19,7 @@
     PFUser *currentUser;
     NSUserDefaults *userDefaults;
     UIStoryboard *userStoryboard;
+    int height;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -44,6 +45,7 @@
     
     currentUser = [PFUser currentUser];
     [self configureECSlidingController];
+    height = [UIScreen mainScreen].bounds.size.height;
 
     [self chartMyStats];
     
@@ -52,6 +54,7 @@
 - (void) viewWillAppear:(BOOL)animated {
     userDefaults = [NSUserDefaults standardUserDefaults];
     userStoryboard = [self grabStoryboard];
+    NSLog(@"What is my storyboard? %@", [userStoryboard description]);
     [self changeLabels];
 
 }
@@ -96,7 +99,9 @@
     
     PNLineChart *lineChart;
     
-    if (userStoryboard == [UIStoryboard storyboardWithName:@"Main4" bundle:nil]) {
+    
+    if (height == 480) {
+        
         lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(-30, 175.0, 380, 105.0)];
     }
     else {
@@ -157,7 +162,7 @@
     
     PNLineChart *lineChartRK;
     
-    if (userStoryboard == [UIStoryboard storyboardWithName:@"Main4" bundle:nil]) {
+    if (height == 480) {
         lineChartRK = [[PNLineChart alloc] initWithFrame:CGRectMake(-30, 375.0, 380, 105.0)];
     }
     else {
@@ -217,11 +222,27 @@
     
     UIColor *bgColor = [UIColor colorWithRed:84.0/255.0 green:84.0/255.0 blue:84.0/255.0 alpha:1.0];
 
-    CGRect maskBounds1 = CGRectMake(-30.0, 155.0, 30, 180);
+    CGRect maskBounds1;
+    
+    if (height == 480) {
+        maskBounds1 = CGRectMake(-30.0, 145.0, 30, 180);
+    }
+    else {
+        maskBounds1 = CGRectMake(-30.0, 155.0, 30, 180);
+    }
+    
     UIView *maskLine1 = [[UIView alloc] initWithFrame:maskBounds1];
     maskLine1.backgroundColor = bgColor;
     
-    CGRect maskBounds2 = CGRectMake(-30.0, 410.0, 30, 180);
+    CGRect maskBounds2;
+    
+    if (height == 480) {
+        maskBounds2 = CGRectMake(-30.0, 375.0, 30, 180);
+    }
+    else {
+        maskBounds2 = CGRectMake(-30.0, 410.0, 30, 180);
+    }
+    
     UIView *maskLine2 = [[UIView alloc] initWithFrame:maskBounds2];
     maskLine2.backgroundColor = bgColor;
     
@@ -305,10 +326,10 @@
     
     if (height == 480) {
         storyboard = [UIStoryboard storyboardWithName:@"Main4" bundle:nil];
-        // NSLog(@"Device has a 3.5inch Display.");
+         NSLog(@"Device has a 3.5inch Display.");
     } else {
         storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        // NSLog(@"Device has a 4inch Display.");
+         NSLog(@"Device has a 4inch Display.");
     }
     
     return storyboard;
